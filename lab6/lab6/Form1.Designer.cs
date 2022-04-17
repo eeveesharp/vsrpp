@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxMainText = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuFont = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,29 +62,34 @@
             this.buttonDeleteWord = new System.Windows.Forms.Button();
             this.textBoxForDelete = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxforLiteral = new System.Windows.Forms.TextBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelQuantitySymbol = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelFontName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBoxforLiteral = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemCut = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemInsert = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.TabControl.SuspendLayout();
             this.FindPage.SuspendLayout();
             this.ReplacePage.SuspendLayout();
             this.DeletePage.SuspendLayout();
-            this.statusStrip.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.statusStrip.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxMainText
             // 
-            this.textBoxMainText.Location = new System.Drawing.Point(310, 27);
+            this.textBoxMainText.Location = new System.Drawing.Point(306, 27);
             this.textBoxMainText.Multiline = true;
             this.textBoxMainText.Name = "textBoxMainText";
             this.textBoxMainText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxMainText.Size = new System.Drawing.Size(376, 216);
+            this.textBoxMainText.Size = new System.Drawing.Size(380, 212);
             this.textBoxMainText.TabIndex = 0;
             this.textBoxMainText.TextChanged += new System.EventHandler(this.textBoxMainText_TextChanged);
             // 
@@ -403,6 +409,46 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Какое слово желаете удалить?";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.textBoxforLiteral);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(296, 189);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Вхождение литерала";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(238, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 20);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Ok";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Adobe Heiti Std R", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(108, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 14);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Укажите символ";
+            // 
+            // textBoxforLiteral
+            // 
+            this.textBoxforLiteral.Location = new System.Drawing.Point(132, 70);
+            this.textBoxforLiteral.Name = "textBoxforLiteral";
+            this.textBoxforLiteral.Size = new System.Drawing.Size(100, 20);
+            this.textBoxforLiteral.TabIndex = 0;
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -426,45 +472,35 @@
             this.toolStripStatusLabelFontName.Size = new System.Drawing.Size(222, 17);
             this.toolStripStatusLabelFontName.Text = "Текущий шрифт:  \"Microsoft Sans Serif\"";
             // 
-            // tabPage1
+            // contextMenuStrip1
             // 
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.textBoxforLiteral);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(296, 189);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "Вхождение литерала";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemCut,
+            this.toolStripMenuItemCopy,
+            this.toolStripMenuItemInsert});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(140, 70);
             // 
-            // textBoxforLiteral
+            // toolStripMenuItemCut
             // 
-            this.textBoxforLiteral.Location = new System.Drawing.Point(132, 70);
-            this.textBoxforLiteral.Name = "textBoxforLiteral";
-            this.textBoxforLiteral.Size = new System.Drawing.Size(100, 20);
-            this.textBoxforLiteral.TabIndex = 0;
+            this.toolStripMenuItemCut.Name = "toolStripMenuItemCut";
+            this.toolStripMenuItemCut.Size = new System.Drawing.Size(139, 22);
+            this.toolStripMenuItemCut.Text = "Вырезать";
+            this.toolStripMenuItemCut.Click += new System.EventHandler(this.toolStripMenuItemCut_Click);
             // 
-            // label5
+            // toolStripMenuItemCopy
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Adobe Heiti Std R", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(108, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 14);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Укажите символ";
+            this.toolStripMenuItemCopy.Name = "toolStripMenuItemCopy";
+            this.toolStripMenuItemCopy.Size = new System.Drawing.Size(139, 22);
+            this.toolStripMenuItemCopy.Text = "Копировать";
+            this.toolStripMenuItemCopy.Click += new System.EventHandler(this.toolStripMenuItemCopy_Click);
             // 
-            // button1
+            // toolStripMenuItemInsert
             // 
-            this.button1.Location = new System.Drawing.Point(238, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 20);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Ok";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.toolStripMenuItemInsert.Name = "toolStripMenuItemInsert";
+            this.toolStripMenuItemInsert.Size = new System.Drawing.Size(139, 22);
+            this.toolStripMenuItemInsert.Text = "Вставить";
+            this.toolStripMenuItemInsert.Click += new System.EventHandler(this.toolStripMenuItemInsert_Click);
             // 
             // Form1
             // 
@@ -487,10 +523,11 @@
             this.ReplacePage.PerformLayout();
             this.DeletePage.ResumeLayout(false);
             this.DeletePage.PerformLayout();
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,6 +575,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxforLiteral;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCut;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCopy;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemInsert;
     }
 }
 

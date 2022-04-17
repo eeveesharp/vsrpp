@@ -27,6 +27,8 @@ namespace lab6
 
         Timer timer;
 
+        private string _buffer;
+
         public Form1()
         {
             InitializeComponent();
@@ -48,6 +50,10 @@ namespace lab6
             timer = new Timer() { Interval = 1000 };
             timer.Tick += timer_Tick;
             timer.Start();
+
+            textBoxMainText.ContextMenuStrip = contextMenuStrip1;
+
+            toolStripMenuItemCopy.Click += toolStripMenuItemCopy_Click;
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -104,7 +110,7 @@ namespace lab6
                 {
                     if (i == 0)
                     {
-                        array[i] = array[i].Substring(0, 1).ToUpper() + array[i].Substring(1, array[i].Length - 1);
+                        array[i] = array[i].Substring(0, 1).ToUpper() + array[i].Substring(1, array[i].Length - 1).ToLower();
                     }
 
                     if (array[i] == "."
@@ -168,7 +174,14 @@ namespace lab6
                 }
             }
 
-            MessageBox.Show(stringBuilder.ToString());
+            if (stringBuilder.Length == 0)
+            {
+                MessageBox.Show("Нет таких предложений");
+            }
+            else
+            {
+                MessageBox.Show(stringBuilder.ToString());
+            }
         }
 
         private void FindSentenceWithoutRegisterWord()
@@ -194,7 +207,14 @@ namespace lab6
                 }
             }
 
-            MessageBox.Show(stringBuilder.ToString());
+            if (stringBuilder.Length == 0)
+            {
+                MessageBox.Show("Нет таких предложений");
+            }
+            else
+            {
+                MessageBox.Show(stringBuilder.ToString());
+            }          
         }
 
         private void buttonForReplace_Click(object sender, EventArgs e)
@@ -241,9 +261,8 @@ namespace lab6
 
         private void ToolStripMenuInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Шрифт:{_font}\n" +
-                $"Кол-во символов:{GetQuantitySymbol()}\n" +
-                $"Текущая дата:{DateTime.Now}");
+            MessageBox.Show("Выполнил:Шамигов М.А\n" +
+                "Вариант 9");
         }
 
         private string GetQuantitySymbol()
@@ -322,14 +341,17 @@ namespace lab6
 
         private StringBuilder GetLiteral()
         {
-            string pattern = @"([.!?])";
-
             string[] arrayText = textBoxMainText.Text.Split('.', '!', '?');
 
             StringBuilder stringBuilder = new StringBuilder();
 
             for (int i = 0; i < arrayText.Length; i++)
-            {              
+            {
+                if (arrayText[i] == string.Empty)
+                {
+                    continue;
+                }
+
                 string[] array = arrayText[i].Split(' ',' ',',');
 
                 for (int j = 0; j < array.Length; j++)
@@ -361,6 +383,22 @@ namespace lab6
             }
 
             return stringBuilder;
+        }
+
+        private void toolStripMenuItemCut_Click(object sender, EventArgs e)
+        {
+            _buffer = textBoxMainText.SelectedText;
+            textBoxMainText.Cut();
+        }
+
+        private void toolStripMenuItemCopy_Click(object sender, EventArgs e)
+        {
+            _buffer = textBoxMainText.SelectedText;
+        }
+
+        private void toolStripMenuItemInsert_Click(object sender, EventArgs e)
+        {
+            textBoxMainText.Paste(_buffer);
         }
     }
 }
