@@ -137,6 +137,13 @@ namespace lab6
 
         private void buttonForFind_Click(object sender, EventArgs e)
         {
+            if (textBoxForFindPage.Text.Length == 0)
+            {
+                MessageBox.Show("Введите слово");
+
+                return;
+            }
+
             if (radioButtonWithoutRegister.Checked == true)
             {
                 FindSentenceWithoutRegisterWord();
@@ -219,6 +226,13 @@ namespace lab6
 
         private void buttonForReplace_Click(object sender, EventArgs e)
         {
+            if (textBoxForReplaceFirstWord.Text.Length == 0 || textBoxForReplaceSecondWord.Text.Length == 0)
+            {
+                MessageBox.Show("Заполните все поля");
+
+                return;
+            }
+
             if (radioButtonForReplaceWithRegister.Checked == true)
             {
                 textBoxMainText.Text = textBoxMainText.Text.Replace(textBoxForReplaceFirstWord.Text, textBoxForReplaceSecondWord.Text);
@@ -243,6 +257,13 @@ namespace lab6
 
         private void buttonDeleteWord_Click(object sender, EventArgs e)
         {
+            if (textBoxForDelete.Text.Length == 0)
+            {
+                MessageBox.Show("Введите слово");
+
+                return;
+            }
+
             if (radioButtonForDeleteWithRegister.Checked == true)
             {
                 textBoxMainText.Text = textBoxMainText.Text.Replace(textBoxForDelete.Text, string.Empty);
@@ -336,7 +357,14 @@ namespace lab6
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(GetLiteral().ToString());
+            if (textBoxforLiteral.Text.Length == 0)
+            {
+                MessageBox.Show("Введите слово");
+            }
+            else
+            {
+                MessageBox.Show(GetLiteral().ToString());
+            }           
         }
 
         private StringBuilder GetLiteral()
@@ -399,6 +427,65 @@ namespace lab6
         private void toolStripMenuItemInsert_Click(object sender, EventArgs e)
         {
             textBoxMainText.Paste(_buffer);
+        }
+
+        private void buttonInsertWord_Click(object sender, EventArgs e)
+        {
+            string pattern = @"([ .,!?-])";
+
+            string str = string.Empty;
+
+            string[] arrayText = Regex.Split(textBoxMainText.Text, pattern);
+
+            if (textBoxInsertFirstWord.Text.Length == 0 || textBoxInsertSecondWord.Text.Length == 0)
+            {
+                MessageBox.Show("Заполните все поля");
+
+                return;
+            }
+
+            for (int i = 0; i < arrayText.Length; i++)
+            {
+                if (arrayText[i] == textBoxInsertFirstWord.Text)
+                {
+                    arrayText[i] = arrayText[i] + " " + textBoxInsertSecondWord.Text;
+                }
+            }
+
+            str = string.Join("", arrayText);
+
+            textBoxMainText.Text = str;
+        }
+
+        private void buttonFindQuantityWordWithA_Click(object sender, EventArgs e)
+        {
+            string pattern = @"([ .,!?-])";
+
+            string[] arrayText = Regex.Split(textBoxMainText.Text, pattern);
+
+            int countWords = 0;
+
+            for (int i = 0; i < arrayText.Length; i++)
+            {
+                int temp = 0;
+
+                char[] arrayWord = arrayText[i].ToArray();
+
+                for (int j = 0; j < arrayWord.Length; j++)
+                {
+                    if (arrayWord[j].ToString().ToUpper() == "А")
+                    {
+                        temp++;
+                    }
+                }
+
+                if (temp == 2)
+                {
+                    countWords++;
+                }
+            }
+
+            MessageBox.Show(countWords.ToString());
         }
     }
 }

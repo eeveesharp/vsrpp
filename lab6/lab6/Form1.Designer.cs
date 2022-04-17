@@ -73,6 +73,13 @@
             this.toolStripMenuItemCut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPageInsertWord = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxInsertFirstWord = new System.Windows.Forms.TextBox();
+            this.textBoxInsertSecondWord = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.buttonInsertWord = new System.Windows.Forms.Button();
+            this.buttonFindQuantityWordWithA = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.TabControl.SuspendLayout();
             this.FindPage.SuspendLayout();
@@ -81,15 +88,16 @@
             this.tabPage1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.tabPageInsertWord.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxMainText
             // 
-            this.textBoxMainText.Location = new System.Drawing.Point(306, 27);
+            this.textBoxMainText.Location = new System.Drawing.Point(387, 27);
             this.textBoxMainText.Multiline = true;
             this.textBoxMainText.Name = "textBoxMainText";
             this.textBoxMainText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxMainText.Size = new System.Drawing.Size(380, 212);
+            this.textBoxMainText.Size = new System.Drawing.Size(379, 194);
             this.textBoxMainText.TabIndex = 0;
             this.textBoxMainText.TextChanged += new System.EventHandler(this.textBoxMainText_TextChanged);
             // 
@@ -101,7 +109,7 @@
             this.ToolStripMenuInfo});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(698, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(781, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -196,10 +204,11 @@
             this.TabControl.Controls.Add(this.ReplacePage);
             this.TabControl.Controls.Add(this.DeletePage);
             this.TabControl.Controls.Add(this.tabPage1);
-            this.TabControl.Location = new System.Drawing.Point(0, 28);
+            this.TabControl.Controls.Add(this.tabPageInsertWord);
+            this.TabControl.Location = new System.Drawing.Point(0, 27);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(304, 215);
+            this.TabControl.Size = new System.Drawing.Size(381, 216);
             this.TabControl.TabIndex = 2;
             // 
             // FindPage
@@ -212,7 +221,7 @@
             this.FindPage.Location = new System.Drawing.Point(4, 22);
             this.FindPage.Name = "FindPage";
             this.FindPage.Padding = new System.Windows.Forms.Padding(3);
-            this.FindPage.Size = new System.Drawing.Size(296, 189);
+            this.FindPage.Size = new System.Drawing.Size(373, 190);
             this.FindPage.TabIndex = 0;
             this.FindPage.Text = "Найти";
             this.FindPage.UseVisualStyleBackColor = true;
@@ -251,10 +260,10 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Adobe Heiti Std R", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(54, 3);
+            this.label3.Font = new System.Drawing.Font("Adobe Heiti Std R", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(14, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 60);
+            this.label3.Size = new System.Drawing.Size(313, 46);
             this.label3.TabIndex = 1;
             this.label3.Text = "С каким словом желаете найти предложение?";
             // 
@@ -277,7 +286,7 @@
             this.ReplacePage.Location = new System.Drawing.Point(4, 22);
             this.ReplacePage.Name = "ReplacePage";
             this.ReplacePage.Padding = new System.Windows.Forms.Padding(3);
-            this.ReplacePage.Size = new System.Drawing.Size(296, 189);
+            this.ReplacePage.Size = new System.Drawing.Size(373, 190);
             this.ReplacePage.TabIndex = 1;
             this.ReplacePage.Text = "Заменить";
             this.ReplacePage.UseVisualStyleBackColor = true;
@@ -316,19 +325,19 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Adobe Heiti Std R", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(34, 139);
+            this.label2.Font = new System.Drawing.Font("Adobe Heiti Std R", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(8, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(256, 20);
+            this.label2.Size = new System.Drawing.Size(333, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Слово на какое изменить";
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Adobe Heiti Std R", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(71, 18);
+            this.label1.Font = new System.Drawing.Font("Adobe Heiti Std R", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(43, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 22);
+            this.label1.Size = new System.Drawing.Size(247, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Слово для замены";
             // 
@@ -356,7 +365,7 @@
             this.DeletePage.Location = new System.Drawing.Point(4, 22);
             this.DeletePage.Name = "DeletePage";
             this.DeletePage.Padding = new System.Windows.Forms.Padding(3);
-            this.DeletePage.Size = new System.Drawing.Size(296, 189);
+            this.DeletePage.Size = new System.Drawing.Size(373, 190);
             this.DeletePage.TabIndex = 2;
             this.DeletePage.Text = "Удалить";
             this.DeletePage.UseVisualStyleBackColor = true;
@@ -364,7 +373,7 @@
             // radioButtonForDeleteWithoutRegister
             // 
             this.radioButtonForDeleteWithoutRegister.AutoSize = true;
-            this.radioButtonForDeleteWithoutRegister.Location = new System.Drawing.Point(69, 95);
+            this.radioButtonForDeleteWithoutRegister.Location = new System.Drawing.Point(65, 105);
             this.radioButtonForDeleteWithoutRegister.Name = "radioButtonForDeleteWithoutRegister";
             this.radioButtonForDeleteWithoutRegister.Size = new System.Drawing.Size(123, 17);
             this.radioButtonForDeleteWithoutRegister.TabIndex = 4;
@@ -375,7 +384,7 @@
             // radioButtonForDeleteWithRegister
             // 
             this.radioButtonForDeleteWithRegister.AutoSize = true;
-            this.radioButtonForDeleteWithRegister.Location = new System.Drawing.Point(69, 62);
+            this.radioButtonForDeleteWithRegister.Location = new System.Drawing.Point(65, 73);
             this.radioButtonForDeleteWithRegister.Name = "radioButtonForDeleteWithRegister";
             this.radioButtonForDeleteWithRegister.Size = new System.Drawing.Size(119, 17);
             this.radioButtonForDeleteWithRegister.TabIndex = 3;
@@ -402,10 +411,10 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Adobe Heiti Std R", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Adobe Heiti Std R", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label4.Location = new System.Drawing.Point(49, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 40);
+            this.label4.Size = new System.Drawing.Size(285, 40);
             this.label4.TabIndex = 0;
             this.label4.Text = "Какое слово желаете удалить?";
             // 
@@ -417,7 +426,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(296, 189);
+            this.tabPage1.Size = new System.Drawing.Size(373, 190);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Вхождение литерала";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -435,10 +444,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Adobe Heiti Std R", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Adobe Heiti Std R", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label5.Location = new System.Drawing.Point(108, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 14);
+            this.label5.Size = new System.Drawing.Size(208, 19);
             this.label5.TabIndex = 1;
             this.label5.Text = "Укажите символ";
             // 
@@ -454,9 +463,9 @@
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelQuantitySymbol,
             this.toolStripStatusLabelFontName});
-            this.statusStrip.Location = new System.Drawing.Point(0, 247);
+            this.statusStrip.Location = new System.Drawing.Point(0, 264);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(698, 22);
+            this.statusStrip.Size = new System.Drawing.Size(781, 22);
             this.statusStrip.TabIndex = 3;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -502,11 +511,80 @@
             this.toolStripMenuItemInsert.Text = "Вставить";
             this.toolStripMenuItemInsert.Click += new System.EventHandler(this.toolStripMenuItemInsert_Click);
             // 
+            // tabPageInsertWord
+            // 
+            this.tabPageInsertWord.Controls.Add(this.buttonInsertWord);
+            this.tabPageInsertWord.Controls.Add(this.label7);
+            this.tabPageInsertWord.Controls.Add(this.textBoxInsertSecondWord);
+            this.tabPageInsertWord.Controls.Add(this.textBoxInsertFirstWord);
+            this.tabPageInsertWord.Controls.Add(this.label6);
+            this.tabPageInsertWord.Location = new System.Drawing.Point(4, 22);
+            this.tabPageInsertWord.Name = "tabPageInsertWord";
+            this.tabPageInsertWord.Size = new System.Drawing.Size(373, 190);
+            this.tabPageInsertWord.TabIndex = 4;
+            this.tabPageInsertWord.Text = "Вставка слова";
+            this.tabPageInsertWord.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(3, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(366, 19);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Слово,после которого нужно вставить слово";
+            // 
+            // textBoxInsertFirstWord
+            // 
+            this.textBoxInsertFirstWord.Location = new System.Drawing.Point(75, 48);
+            this.textBoxInsertFirstWord.Name = "textBoxInsertFirstWord";
+            this.textBoxInsertFirstWord.Size = new System.Drawing.Size(133, 20);
+            this.textBoxInsertFirstWord.TabIndex = 1;
+            // 
+            // textBoxInsertSecondWord
+            // 
+            this.textBoxInsertSecondWord.Location = new System.Drawing.Point(75, 141);
+            this.textBoxInsertSecondWord.Name = "textBoxInsertSecondWord";
+            this.textBoxInsertSecondWord.Size = new System.Drawing.Size(133, 20);
+            this.textBoxInsertSecondWord.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(27, 102);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(256, 19);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Слово,которое нужно вставить";
+            // 
+            // buttonInsertWord
+            // 
+            this.buttonInsertWord.Location = new System.Drawing.Point(214, 141);
+            this.buttonInsertWord.Name = "buttonInsertWord";
+            this.buttonInsertWord.Size = new System.Drawing.Size(75, 20);
+            this.buttonInsertWord.TabIndex = 4;
+            this.buttonInsertWord.Text = "Insert";
+            this.buttonInsertWord.UseVisualStyleBackColor = true;
+            this.buttonInsertWord.Click += new System.EventHandler(this.buttonInsertWord_Click);
+            // 
+            // buttonFindQuantityWordWithA
+            // 
+            this.buttonFindQuantityWordWithA.Location = new System.Drawing.Point(387, 220);
+            this.buttonFindQuantityWordWithA.Name = "buttonFindQuantityWordWithA";
+            this.buttonFindQuantityWordWithA.Size = new System.Drawing.Size(379, 23);
+            this.buttonFindQuantityWordWithA.TabIndex = 4;
+            this.buttonFindQuantityWordWithA.Text = "Найти количество слов, которые содержат ровно две буквы «А» ";
+            this.buttonFindQuantityWordWithA.UseVisualStyleBackColor = true;
+            this.buttonFindQuantityWordWithA.Click += new System.EventHandler(this.buttonFindQuantityWordWithA_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 269);
+            this.ClientSize = new System.Drawing.Size(781, 286);
+            this.Controls.Add(this.buttonFindQuantityWordWithA);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.textBoxMainText);
@@ -528,6 +606,8 @@
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.tabPageInsertWord.ResumeLayout(false);
+            this.tabPageInsertWord.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -579,6 +659,13 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCut;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCopy;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemInsert;
+        private System.Windows.Forms.TabPage tabPageInsertWord;
+        private System.Windows.Forms.Button buttonInsertWord;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxInsertSecondWord;
+        private System.Windows.Forms.TextBox textBoxInsertFirstWord;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonFindQuantityWordWithA;
     }
 }
 
