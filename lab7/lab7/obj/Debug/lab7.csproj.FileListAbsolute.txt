@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\vsrpp\lab7\lab7\bin\Debug\lab7.exe.config
+C:\Users\User\Desktop\vsrpp\lab7\lab7\bin\Debug\lab7.exe
+C:\Users\User\Desktop\vsrpp\lab7\lab7\bin\Debug\lab7.pdb
+C:\Users\User\Desktop\vsrpp\lab7\lab7\obj\Debug\lab7.csprojAssemblyReference.cache
+C:\Users\User\Desktop\vsrpp\lab7\lab7\obj\Debug\lab7.DataForm.resources
+C:\Users\User\Desktop\vsrpp\lab7\lab7\obj\Debug\lab7.MainForm.resources
+C:\Users\User\Desktop\vsrpp\lab7\lab7\obj\Debug\lab7.Properties.Resources.resources
+C:\Users\User\Desktop\vsrpp\lab7\lab7\obj\Debug\lab7.csproj.GenerateResource.cache
+C:\Users\User\Desktop\vsrpp\lab7\lab7\obj\Debug\lab7.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\vsrpp\lab7\lab7\obj\Debug\lab7.exe
+C:\Users\User\Desktop\vsrpp\lab7\lab7\obj\Debug\lab7.pdb
