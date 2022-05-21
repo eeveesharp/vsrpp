@@ -28,7 +28,43 @@ namespace lab7
 
         private void buttonSetData_Click(object sender, EventArgs e)
         {
-            Computer.Color = comboBoxColor.Text;
+            bool isCorrect = isCorrectData();
+
+            if (isCorrect)
+            {
+                labelError.Visible = true;
+            }
+            else
+            {
+                Computer.Color = comboBoxColor.Text;
+
+                Computer.RAM = textBoxRam.Text;
+
+                Computer.GPU = textBoxGpu.Text;
+
+                Computer.CPU = textBoxCpu.Text;
+
+                labelError.Visible = false;
+
+                Close();
+            }        
+        }
+
+        private bool isCorrectData()
+        {
+            bool isCorrect = false;
+
+            Object selectedItem = comboBoxColor.SelectedItem;
+
+            if (selectedItem is null
+                || string.IsNullOrEmpty(textBoxCpu.Text)
+                || string.IsNullOrEmpty(textBoxGpu.Text)
+                || string.IsNullOrEmpty(textBoxRam.Text))
+            {
+                isCorrect = true;
+            }
+
+            return isCorrect;
         }
     }
 }

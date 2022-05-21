@@ -17,20 +17,22 @@ namespace lab7
         public MainForm()
         {
             InitializeComponent();
+
+            Computer = new Computer();
         }
 
         private void buttonEnterData_Click(object sender, EventArgs e)
-        {
-            Computer = new Computer();
-
+        {           
             DataForm dataForm = new DataForm(Computer);
 
             dataForm.Show();
         }
 
         private void buttonShowData_Click(object sender, EventArgs e)
-        {
+        {          
+            ShowDataForm showDataForm = new ShowDataForm(Computer);
 
+            showDataForm.Show();
         }
     }
 }

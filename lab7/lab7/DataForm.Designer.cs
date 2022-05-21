@@ -28,45 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxCpu = new System.Windows.Forms.TextBox();
+            this.textBoxRam = new System.Windows.Forms.TextBox();
+            this.textBoxGpu = new System.Windows.Forms.TextBox();
             this.labelCPU = new System.Windows.Forms.Label();
             this.labelRAM = new System.Windows.Forms.Label();
             this.labelColor = new System.Windows.Forms.Label();
             this.labelGPU = new System.Windows.Forms.Label();
             this.buttonSetData = new System.Windows.Forms.Button();
             this.comboBoxColor = new System.Windows.Forms.ComboBox();
+            this.labelError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxCpu
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(155, 46);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 37);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxCpu.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBoxCpu.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxCpu.Location = new System.Drawing.Point(155, 43);
+            this.textBoxCpu.Multiline = true;
+            this.textBoxCpu.Name = "textBoxCpu";
+            this.textBoxCpu.Size = new System.Drawing.Size(128, 37);
+            this.textBoxCpu.TabIndex = 0;
+            this.textBoxCpu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // textBoxRam
             // 
-            this.textBox2.Location = new System.Drawing.Point(155, 126);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 37);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxRam.Location = new System.Drawing.Point(155, 126);
+            this.textBoxRam.Multiline = true;
+            this.textBoxRam.Name = "textBoxRam";
+            this.textBoxRam.Size = new System.Drawing.Size(128, 37);
+            this.textBoxRam.TabIndex = 1;
+            this.textBoxRam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox4
+            // textBoxGpu
             // 
-            this.textBox4.Location = new System.Drawing.Point(155, 274);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(128, 37);
-            this.textBox4.TabIndex = 3;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxGpu.Location = new System.Drawing.Point(155, 286);
+            this.textBoxGpu.Multiline = true;
+            this.textBoxGpu.Name = "textBoxGpu";
+            this.textBoxGpu.Size = new System.Drawing.Size(128, 37);
+            this.textBoxGpu.TabIndex = 3;
+            this.textBoxGpu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // labelCPU
             // 
@@ -105,7 +106,7 @@
             // 
             this.labelGPU.AutoSize = true;
             this.labelGPU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelGPU.Location = new System.Drawing.Point(196, 242);
+            this.labelGPU.Location = new System.Drawing.Point(196, 253);
             this.labelGPU.Name = "labelGPU";
             this.labelGPU.Size = new System.Drawing.Size(47, 20);
             this.labelGPU.TabIndex = 7;
@@ -114,7 +115,7 @@
             // buttonSetData
             // 
             this.buttonSetData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSetData.Location = new System.Drawing.Point(137, 324);
+            this.buttonSetData.Location = new System.Drawing.Point(137, 353);
             this.buttonSetData.Name = "buttonSetData";
             this.buttonSetData.Size = new System.Drawing.Size(166, 30);
             this.buttonSetData.TabIndex = 8;
@@ -130,22 +131,34 @@
             this.comboBoxColor.Size = new System.Drawing.Size(128, 21);
             this.comboBoxColor.TabIndex = 9;
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.BackColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(165, 326);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(109, 13);
+            this.labelError.TabIndex = 10;
+            this.labelError.Text = "Заполните все поля";
+            this.labelError.Visible = false;
+            // 
             // DataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::lab7.Properties.Resources.original_5791219640c088286e8ba349_5a42e2c908749;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(442, 366);
+            this.ClientSize = new System.Drawing.Size(443, 395);
+            this.Controls.Add(this.labelError);
             this.Controls.Add(this.comboBoxColor);
             this.Controls.Add(this.buttonSetData);
             this.Controls.Add(this.labelGPU);
             this.Controls.Add(this.labelColor);
             this.Controls.Add(this.labelRAM);
             this.Controls.Add(this.labelCPU);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxGpu);
+            this.Controls.Add(this.textBoxRam);
+            this.Controls.Add(this.textBoxCpu);
             this.Name = "DataForm";
             this.Text = "Компьютер";
             this.ResumeLayout(false);
@@ -155,14 +168,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxCpu;
+        private System.Windows.Forms.TextBox textBoxRam;
+        private System.Windows.Forms.TextBox textBoxGpu;
         private System.Windows.Forms.Label labelCPU;
         private System.Windows.Forms.Label labelRAM;
         private System.Windows.Forms.Label labelColor;
         private System.Windows.Forms.Label labelGPU;
         private System.Windows.Forms.Button buttonSetData;
         private System.Windows.Forms.ComboBox comboBoxColor;
+        private System.Windows.Forms.Label labelError;
     }
 }
