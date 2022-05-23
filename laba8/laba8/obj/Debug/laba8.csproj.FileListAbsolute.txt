@@ -9,3 +9,4 @@ C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.pdb
 C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.csprojAssemblyReference.cache
 C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.MainForm.resources
 C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.NotebookForm.resources
+C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.DesktopForm.resources

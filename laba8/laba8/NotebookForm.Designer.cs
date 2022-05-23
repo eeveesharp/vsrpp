@@ -59,6 +59,7 @@
             // 
             // comboBoxGPU
             // 
+            this.comboBoxGPU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGPU.FormattingEnabled = true;
             this.comboBoxGPU.Items.AddRange(new object[] {
             "nvidia",
@@ -70,6 +71,7 @@
             // 
             // comboBoxBattery
             // 
+            this.comboBoxBattery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBattery.FormattingEnabled = true;
             this.comboBoxBattery.Items.AddRange(new object[] {
             "LiPoly ",
@@ -168,6 +170,7 @@
             // 
             // comboBoxNumberOfCores
             // 
+            this.comboBoxNumberOfCores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNumberOfCores.FormattingEnabled = true;
             this.comboBoxNumberOfCores.Items.AddRange(new object[] {
             "2",

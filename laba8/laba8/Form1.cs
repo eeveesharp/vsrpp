@@ -23,13 +23,31 @@ namespace laba8
         {
             Notebook notebook = new Notebook();
 
+            Desktop desktop = new Desktop();
+
             if (radioButtonNotebook.Checked == true)
             {
-                NotebookForm notebookForm = new NotebookForm(notebook);
-
-                computers.Add(notebook);
+                NotebookForm notebookForm = new NotebookForm(notebook);               
 
                 notebookForm.Show();
+
+                computers.Add(notebook);              
+            }
+            else if (radioButtonDesktop.Checked == true)
+            {
+                DesktopForm desktopForm = new DesktopForm(desktop);
+
+                desktopForm.Show();
+
+                computers.Add(desktop);                
+            }          
+        }
+
+        private void buttonShortData_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < computers.Count; i++)
+            {
+                listBoxComputer.Items.Add(computers[i]);
             }
         }
     }

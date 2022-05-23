@@ -33,6 +33,8 @@
             this.buttonEnterData = new System.Windows.Forms.Button();
             this.radioButtonNotebook = new System.Windows.Forms.RadioButton();
             this.radioButtonDesktop = new System.Windows.Forms.RadioButton();
+            this.buttonShortData = new System.Windows.Forms.Button();
+            this.buttonShowData = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +43,7 @@
             this.listBoxComputer.FormattingEnabled = true;
             this.listBoxComputer.Location = new System.Drawing.Point(251, 25);
             this.listBoxComputer.Name = "listBoxComputer";
-            this.listBoxComputer.Size = new System.Drawing.Size(386, 251);
+            this.listBoxComputer.Size = new System.Drawing.Size(383, 186);
             this.listBoxComputer.TabIndex = 0;
             // 
             // groupBox1
@@ -68,6 +70,7 @@
             // radioButtonNotebook
             // 
             this.radioButtonNotebook.AutoSize = true;
+            this.radioButtonNotebook.Checked = true;
             this.radioButtonNotebook.Location = new System.Drawing.Point(6, 28);
             this.radioButtonNotebook.Name = "radioButtonNotebook";
             this.radioButtonNotebook.Size = new System.Drawing.Size(66, 17);
@@ -83,15 +86,35 @@
             this.radioButtonDesktop.Name = "radioButtonDesktop";
             this.radioButtonDesktop.Size = new System.Drawing.Size(69, 17);
             this.radioButtonDesktop.TabIndex = 1;
-            this.radioButtonDesktop.TabStop = true;
             this.radioButtonDesktop.Text = "Десктоп";
             this.radioButtonDesktop.UseVisualStyleBackColor = true;
+            // 
+            // buttonShortData
+            // 
+            this.buttonShortData.Location = new System.Drawing.Point(363, 218);
+            this.buttonShortData.Name = "buttonShortData";
+            this.buttonShortData.Size = new System.Drawing.Size(125, 23);
+            this.buttonShortData.TabIndex = 3;
+            this.buttonShortData.Text = "Краткие сведения";
+            this.buttonShortData.UseVisualStyleBackColor = true;
+            this.buttonShortData.Click += new System.EventHandler(this.buttonShortData_Click);
+            // 
+            // buttonShowData
+            // 
+            this.buttonShowData.Location = new System.Drawing.Point(363, 247);
+            this.buttonShowData.Name = "buttonShowData";
+            this.buttonShowData.Size = new System.Drawing.Size(125, 23);
+            this.buttonShowData.TabIndex = 4;
+            this.buttonShowData.Text = "Просмотреть данные";
+            this.buttonShowData.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 282);
+            this.Controls.Add(this.buttonShowData);
+            this.Controls.Add(this.buttonShortData);
             this.Controls.Add(this.buttonEnterData);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBoxComputer);
@@ -110,6 +133,8 @@
         private System.Windows.Forms.Button buttonEnterData;
         private System.Windows.Forms.RadioButton radioButtonDesktop;
         private System.Windows.Forms.RadioButton radioButtonNotebook;
+        private System.Windows.Forms.Button buttonShortData;
+        private System.Windows.Forms.Button buttonShowData;
     }
 }
 

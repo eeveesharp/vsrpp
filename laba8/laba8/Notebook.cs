@@ -34,7 +34,7 @@ namespace laba8
         public override bool Equals(object obj)
         {
             if (obj is Notebook
-                || obj != null)
+                && obj != null)
             {
                 Notebook tempNotebook = (Notebook)obj;
 
@@ -54,16 +54,12 @@ namespace laba8
 
         public override string Show() => $"Процессор: {CPU}\n" +
           $"Количество оперативной памяти: {NumberOfRAM}\n" +
-          $"Количество ядер: {NumberOfRAM}\n" +
+          $"Количество ядер: {NumberOfCore}\n" +
           $"Видеокарта: {GPU}\n" +
           $"Тип батареи: {TypeBattery}\n" +
           $"Время работы: {WorkHours}";
 
-        public override string ToString() => string.Format($"{CPU}," +
-            $"{NumberOfRAM}," +
-            $"{NumberOfRAM}," +
-            $"{GPU}," +
-            $"{TypeBattery}," +
-            $"{WorkHours}");
+        public override string ToString() => string.Format($"Ноутбук| Процессор: {CPU}" +          
+            $"Видеокарта: {GPU}");
     }
 }
