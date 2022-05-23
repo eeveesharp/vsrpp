@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\vsrpp\laba8\laba8\bin\Debug\laba8.exe.config
+C:\Users\User\Desktop\vsrpp\laba8\laba8\bin\Debug\laba8.exe
+C:\Users\User\Desktop\vsrpp\laba8\laba8\bin\Debug\laba8.pdb
+C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.Properties.Resources.resources
+C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.csproj.GenerateResource.cache
+C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.exe
+C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.pdb
+C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.csprojAssemblyReference.cache
+C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.MainForm.resources
+C:\Users\User\Desktop\vsrpp\laba8\laba8\obj\Debug\laba8.NotebookForm.resources
