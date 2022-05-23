@@ -45,9 +45,27 @@ namespace laba8
 
         private void buttonShortData_Click(object sender, EventArgs e)
         {
+            listBoxComputer.Items.Clear();
+
             for (int i = 0; i < computers.Count; i++)
             {
                 listBoxComputer.Items.Add(computers[i]);
+            }
+        }
+
+        private void buttonShowData_Click(object sender, EventArgs e)
+        {
+            if (listBoxComputer.SelectedItem is Desktop)
+            {
+                Desktop selectedComputer = (Desktop)listBoxComputer.SelectedItem;
+
+                MessageBox.Show(selectedComputer.Show());
+            }
+            else
+            {
+                Notebook selectedComputer = (Notebook)listBoxComputer.SelectedItem;
+
+                MessageBox.Show(selectedComputer.Show());
             }
         }
     }

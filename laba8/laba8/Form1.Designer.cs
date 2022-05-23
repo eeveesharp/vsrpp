@@ -107,6 +107,7 @@
             this.buttonShowData.TabIndex = 4;
             this.buttonShowData.Text = "Просмотреть данные";
             this.buttonShowData.UseVisualStyleBackColor = true;
+            this.buttonShowData.Click += new System.EventHandler(this.buttonShowData_Click);
             // 
             // MainForm
             // 

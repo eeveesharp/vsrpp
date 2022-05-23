@@ -59,11 +59,8 @@ namespace laba8
           $"Тип батареи: {PowerBlock}\n" +
           $"Время работы: {TypeBody}";
 
-        public override string ToString() => string.Format($"fgdg{CPU}," +
-            $"{NumberOfRAM}," +
-            $"{NumberOfRAM}," +
-            $"{GPU}," +
-            $"{PowerBlock}," +
-            $"{TypeBody}");
+        public override string ToString() => string.Format($"Десктоп| Процессор: {CPU}" +
+            $" Видеокарта: {GPU}" +
+            $" Блок питания: {PowerBlock}");
     }
 }

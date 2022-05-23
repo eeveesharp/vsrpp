@@ -59,7 +59,7 @@ namespace laba8
           $"Тип батареи: {TypeBattery}\n" +
           $"Время работы: {WorkHours}";
 
-        public override string ToString() => string.Format($"Ноутбук| Процессор: {CPU}" +          
+        public override string ToString() => string.Format($"Ноутбук| Процессор: {CPU} " +          
             $"Видеокарта: {GPU}");
     }
 }
