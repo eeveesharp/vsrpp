@@ -56,8 +56,8 @@ namespace laba8
           $"Количество оперативной памяти: {NumberOfRAM}\n" +
           $"Количество ядер: {NumberOfRAM}\n" +
           $"Видеокарта: {GPU}\n" +
-          $"Тип батареи: {PowerBlock}\n" +
-          $"Время работы: {TypeBody}";
+          $"Блок питания: {PowerBlock}\n" +
+          $"Тип корпуса: {TypeBody}";
 
         public override string ToString() => string.Format($"Десктоп| Процессор: {CPU}" +
             $" Видеокарта: {GPU}" +

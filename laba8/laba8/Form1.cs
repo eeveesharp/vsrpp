@@ -55,18 +55,9 @@ namespace laba8
 
         private void buttonShowData_Click(object sender, EventArgs e)
         {
-            if (listBoxComputer.SelectedItem is Desktop)
-            {
-                Desktop selectedComputer = (Desktop)listBoxComputer.SelectedItem;
+            Computer selectedComputer = (Computer)listBoxComputer.SelectedItem;
 
-                MessageBox.Show(selectedComputer.Show());
-            }
-            else
-            {
-                Notebook selectedComputer = (Notebook)listBoxComputer.SelectedItem;
-
-                MessageBox.Show(selectedComputer.Show());
-            }
+            MessageBox.Show(selectedComputer.Show());
         }
     }
 }
