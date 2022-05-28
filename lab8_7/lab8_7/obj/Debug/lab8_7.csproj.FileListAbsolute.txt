@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\bin\Debug\lab8_7.exe.config
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\bin\Debug\lab8_7.exe
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\bin\Debug\lab8_7.pdb
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\obj\Debug\lab8_7.csprojAssemblyReference.cache
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\obj\Debug\lab8_7.DoctorForm.resources
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\obj\Debug\lab8_7.Form1.resources
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\obj\Debug\lab8_7.PatientForm.resources
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\obj\Debug\lab8_7.Properties.Resources.resources
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\obj\Debug\lab8_7.csproj.GenerateResource.cache
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\obj\Debug\lab8_7.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\obj\Debug\lab8_7.exe
+C:\Users\User\Desktop\vsrpp\lab8_7\lab8_7\obj\Debug\lab8_7.pdb
