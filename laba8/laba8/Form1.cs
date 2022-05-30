@@ -57,7 +57,14 @@ namespace laba8
         {
             Computer selectedComputer = (Computer)listBoxComputer.SelectedItem;
 
-            MessageBox.Show(selectedComputer.Show());
+            if (selectedComputer is null )
+            {
+                MessageBox.Show("Выберите объект");
+            }
+            else
+            {
+                MessageBox.Show(selectedComputer.Show());
+            }            
         }
     }
 }
