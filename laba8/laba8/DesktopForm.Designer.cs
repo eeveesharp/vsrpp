@@ -43,11 +43,13 @@
             this.comboBoxTypeBody = new System.Windows.Forms.ComboBox();
             this.textBoxBP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.datePickerForDesk = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonSetData
             // 
-            this.buttonSetData.Location = new System.Drawing.Point(310, 290);
+            this.buttonSetData.Location = new System.Drawing.Point(303, 341);
             this.buttonSetData.Name = "buttonSetData";
             this.buttonSetData.Size = new System.Drawing.Size(81, 23);
             this.buttonSetData.TabIndex = 29;
@@ -200,11 +202,29 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "Вт";
             // 
+            // datePickerForDesk
+            // 
+            this.datePickerForDesk.Location = new System.Drawing.Point(286, 299);
+            this.datePickerForDesk.Name = "datePickerForDesk";
+            this.datePickerForDesk.Size = new System.Drawing.Size(200, 20);
+            this.datePickerForDesk.TabIndex = 33;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(209, 305);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Дата";
+            // 
             // DesktopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 344);
+            this.ClientSize = new System.Drawing.Size(541, 389);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.datePickerForDesk);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxBP);
             this.Controls.Add(this.comboBoxTypeBody);
@@ -244,5 +264,7 @@
         private System.Windows.Forms.ComboBox comboBoxTypeBody;
         private System.Windows.Forms.TextBox textBoxBP;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker datePickerForDesk;
+        private System.Windows.Forms.Label label3;
     }
 }

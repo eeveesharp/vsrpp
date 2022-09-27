@@ -66,5 +66,14 @@ namespace laba8
                 MessageBox.Show(selectedComputer.Show());
             }            
         }
+
+        private void buttonChangeYear_Click(object sender, EventArgs e)
+        {
+            Computer selectedComputer = (Computer)listBoxComputer.SelectedItem;
+
+            ChangeYear changeYear = new ChangeYear(selectedComputer);
+
+            changeYear.Show();
+        }
     }
 }

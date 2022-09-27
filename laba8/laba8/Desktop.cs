@@ -57,10 +57,22 @@ namespace laba8
           $"Количество ядер: {NumberOfRAM}\n" +
           $"Видеокарта: {GPU}\n" +
           $"Блок питания: {PowerBlock}\n" +
-          $"Тип корпуса: {TypeBody}";
+          $"Тип корпуса: {TypeBody}\n" +
+          $"Дата: {GetDate.ToString("dd:MM:yyyy")}";
 
         public override string ToString() => string.Format($"Десктоп| Процессор: {CPU}" +
             $" Видеокарта: {GPU}" +
-            $" Блок питания: {PowerBlock}");
+            $" Блок питания: {PowerBlock}" +
+            $"Год: {Year}");
+
+        public static bool operator == (Desktop comp1, Desktop comp2)
+        {
+            return comp1.Equals(comp2);
+        }
+
+        public static bool operator != (Desktop comp1, Desktop comp2)
+        {
+            return comp1.Equals(comp2);
+        }
     }
 }

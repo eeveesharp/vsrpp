@@ -61,5 +61,15 @@ namespace laba8
 
         public override string ToString() => string.Format($"Ноутбук| Процессор: {CPU} " +          
             $"Видеокарта: {GPU}");
+
+        public static bool operator == (Notebook comp1, Notebook comp2)
+        {
+            return comp1.Equals(comp2);
+        }
+
+        public static bool operator != (Notebook comp1, Notebook comp2)
+        {
+            return !comp1.Equals(comp2);
+        }
     }
 }

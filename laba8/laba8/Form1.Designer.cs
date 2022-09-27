@@ -30,11 +30,12 @@
         {
             this.listBoxComputer = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonEnterData = new System.Windows.Forms.Button();
-            this.radioButtonNotebook = new System.Windows.Forms.RadioButton();
             this.radioButtonDesktop = new System.Windows.Forms.RadioButton();
+            this.radioButtonNotebook = new System.Windows.Forms.RadioButton();
+            this.buttonEnterData = new System.Windows.Forms.Button();
             this.buttonShortData = new System.Windows.Forms.Button();
             this.buttonShowData = new System.Windows.Forms.Button();
+            this.buttonChangeYear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,15 +58,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выберите";
             // 
-            // buttonEnterData
+            // radioButtonDesktop
             // 
-            this.buttonEnterData.Location = new System.Drawing.Point(29, 46);
-            this.buttonEnterData.Name = "buttonEnterData";
-            this.buttonEnterData.Size = new System.Drawing.Size(200, 23);
-            this.buttonEnterData.TabIndex = 2;
-            this.buttonEnterData.Text = "Ввести данные";
-            this.buttonEnterData.UseVisualStyleBackColor = true;
-            this.buttonEnterData.Click += new System.EventHandler(this.buttonEnterData_Click);
+            this.radioButtonDesktop.AutoSize = true;
+            this.radioButtonDesktop.Location = new System.Drawing.Point(6, 63);
+            this.radioButtonDesktop.Name = "radioButtonDesktop";
+            this.radioButtonDesktop.Size = new System.Drawing.Size(69, 17);
+            this.radioButtonDesktop.TabIndex = 1;
+            this.radioButtonDesktop.Text = "Десктоп";
+            this.radioButtonDesktop.UseVisualStyleBackColor = true;
             // 
             // radioButtonNotebook
             // 
@@ -79,15 +80,15 @@
             this.radioButtonNotebook.Text = "Ноутбук";
             this.radioButtonNotebook.UseVisualStyleBackColor = true;
             // 
-            // radioButtonDesktop
+            // buttonEnterData
             // 
-            this.radioButtonDesktop.AutoSize = true;
-            this.radioButtonDesktop.Location = new System.Drawing.Point(6, 63);
-            this.radioButtonDesktop.Name = "radioButtonDesktop";
-            this.radioButtonDesktop.Size = new System.Drawing.Size(69, 17);
-            this.radioButtonDesktop.TabIndex = 1;
-            this.radioButtonDesktop.Text = "Десктоп";
-            this.radioButtonDesktop.UseVisualStyleBackColor = true;
+            this.buttonEnterData.Location = new System.Drawing.Point(29, 46);
+            this.buttonEnterData.Name = "buttonEnterData";
+            this.buttonEnterData.Size = new System.Drawing.Size(200, 23);
+            this.buttonEnterData.TabIndex = 2;
+            this.buttonEnterData.Text = "Ввести данные";
+            this.buttonEnterData.UseVisualStyleBackColor = true;
+            this.buttonEnterData.Click += new System.EventHandler(this.buttonEnterData_Click);
             // 
             // buttonShortData
             // 
@@ -109,11 +110,22 @@
             this.buttonShowData.UseVisualStyleBackColor = true;
             this.buttonShowData.Click += new System.EventHandler(this.buttonShowData_Click);
             // 
+            // buttonChangeYear
+            // 
+            this.buttonChangeYear.Location = new System.Drawing.Point(363, 276);
+            this.buttonChangeYear.Name = "buttonChangeYear";
+            this.buttonChangeYear.Size = new System.Drawing.Size(125, 25);
+            this.buttonChangeYear.TabIndex = 5;
+            this.buttonChangeYear.Text = "Изменить год";
+            this.buttonChangeYear.UseVisualStyleBackColor = true;
+            this.buttonChangeYear.Click += new System.EventHandler(this.buttonChangeYear_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 282);
+            this.ClientSize = new System.Drawing.Size(647, 304);
+            this.Controls.Add(this.buttonChangeYear);
             this.Controls.Add(this.buttonShowData);
             this.Controls.Add(this.buttonShortData);
             this.Controls.Add(this.buttonEnterData);
@@ -136,6 +148,7 @@
         private System.Windows.Forms.RadioButton radioButtonNotebook;
         private System.Windows.Forms.Button buttonShortData;
         private System.Windows.Forms.Button buttonShowData;
+        private System.Windows.Forms.Button buttonChangeYear;
     }
 }
 

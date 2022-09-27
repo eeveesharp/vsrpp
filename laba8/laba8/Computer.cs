@@ -8,6 +8,53 @@ namespace laba8
 {
     public class Computer
     {
+        private DateTime _date;
+
+        private decimal _price;
+
+        private static int nds = 20;
+
+        public decimal PriceWithNds
+        {
+            get
+            {
+                return _price + _price * (nds / 100);
+            }
+            set
+            {
+                _price = value;
+            }
+        }
+
+        public decimal PriceWithoutNds
+        {
+            get
+            {
+                return _price;
+            }
+            set
+            {
+                _price = value;
+            }
+        }
+
+        public DateTime GetDate
+        {
+            get => _date;
+        }
+
+        public DateTime SetDate
+        {
+            set => _date = value;
+        }
+
+        public int Year
+        {
+            get => _date.Year;
+
+            set => _date = new DateTime(value, _date.Month, _date.Day, _date.Hour, _date.Hour, _date.Second);
+        }
+
         public string CPU { get; set; }
 
         public int NumberOfRAM { get; set; }
@@ -15,6 +62,19 @@ namespace laba8
         public string GPU { get; set; }
 
         public int NumberOfCore { get; set; }
+
+        public bool this[decimal price]
+        {
+            get
+            {
+                if (price > _price)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
 
         public Computer(string cpu,
             int numberOfRam,
@@ -56,6 +116,21 @@ namespace laba8
 
         }
 
+        public Computer(Computer computer)
+        {
+            CPU = computer.CPU;
+
+            GPU = computer.GPU;
+
+            NumberOfCore = computer.NumberOfCore;
+
+            NumberOfRAM = computer.NumberOfRAM;
+
+            SetDate = computer.GetDate;
+
+            PriceWithoutNds = computer.PriceWithoutNds;
+        }
+
         public override bool Equals(object obj)
         {
             if (obj is Computer
@@ -84,5 +159,15 @@ namespace laba8
            $"{NumberOfRAM}," +
            $"{NumberOfRAM}," +
            $"{GPU}");
+
+        public static bool operator ==(Computer comp1, Computer comp2)
+        {
+            return comp1.Equals(comp2);
+        }
+
+        public static bool operator !=(Computer comp1, Computer comp2)
+        {
+            return !comp1.Equals(comp2);
+        }
     }
 }

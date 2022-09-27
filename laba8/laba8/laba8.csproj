@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeYear.Designer.cs">
+      <DependentUpon>ChangeYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="Computer.cs" />
     <Compile Include="Desktop.cs" />
     <Compile Include="DesktopForm.cs">
@@ -69,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChangeYear.resx">
+      <DependentUpon>ChangeYear.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DesktopForm.resx">
       <DependentUpon>DesktopForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -38,6 +38,8 @@ namespace laba8
                 Desktop.PowerBlock = numberBP;
 
                 Desktop.TypeBody = comboBoxTypeBody.Text;
+
+                Desktop.SetDate = DateTime.Parse(datePickerForDesk.Text);
             }
             else
             {
