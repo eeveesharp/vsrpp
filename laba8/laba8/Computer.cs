@@ -10,7 +10,7 @@ namespace laba8
     {
         private DateTime _date;
 
-        private decimal _price;
+        private decimal _price = 100;
 
         private static int nds = 20;
 
@@ -18,11 +18,13 @@ namespace laba8
         {
             get
             {
-                return _price + _price * (nds / 100);
+                var a = _price + (_price * (decimal)(nds / 100.0));
+
+                return a;
             }
             set
             {
-                _price = value;
+                _price = _price + _price * (nds / 100);
             }
         }
 
@@ -129,6 +131,8 @@ namespace laba8
             SetDate = computer.GetDate;
 
             PriceWithoutNds = computer.PriceWithoutNds;
+
+            PriceWithNds = computer.PriceWithoutNds;
         }
 
         public override bool Equals(object obj)

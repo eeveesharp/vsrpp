@@ -40,6 +40,8 @@ namespace laba8
                 Desktop.TypeBody = comboBoxTypeBody.Text;
 
                 Desktop.SetDate = DateTime.Parse(datePickerForDesk.Text);
+
+                Desktop.PriceWithoutNds = int.Parse(textBoxPrice.Text);
             }
             else
             {

@@ -36,6 +36,7 @@
             this.buttonShortData = new System.Windows.Forms.Button();
             this.buttonShowData = new System.Windows.Forms.Button();
             this.buttonChangeYear = new System.Windows.Forms.Button();
+            this.buttonCopy = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,11 +121,22 @@
             this.buttonChangeYear.UseVisualStyleBackColor = true;
             this.buttonChangeYear.Click += new System.EventHandler(this.buttonChangeYear_Click);
             // 
+            // buttonCopy
+            // 
+            this.buttonCopy.Location = new System.Drawing.Point(363, 308);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(125, 23);
+            this.buttonCopy.TabIndex = 6;
+            this.buttonCopy.Text = "Скопировать";
+            this.buttonCopy.UseVisualStyleBackColor = true;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 304);
+            this.ClientSize = new System.Drawing.Size(649, 343);
+            this.Controls.Add(this.buttonCopy);
             this.Controls.Add(this.buttonChangeYear);
             this.Controls.Add(this.buttonShowData);
             this.Controls.Add(this.buttonShortData);
@@ -149,6 +161,7 @@
         private System.Windows.Forms.Button buttonShortData;
         private System.Windows.Forms.Button buttonShowData;
         private System.Windows.Forms.Button buttonChangeYear;
+        private System.Windows.Forms.Button buttonCopy;
     }
 }
 

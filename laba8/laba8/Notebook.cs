@@ -31,6 +31,13 @@ namespace laba8
         {
         }
 
+        public Notebook(Notebook notebook) : base(notebook)
+        {
+            TypeBattery = notebook.TypeBattery;
+
+            WorkHours = notebook.WorkHours;
+        }
+
         public override bool Equals(object obj)
         {
             if (obj is Notebook

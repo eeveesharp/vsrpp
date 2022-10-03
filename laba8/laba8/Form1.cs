@@ -30,8 +30,8 @@ namespace laba8
                 NotebookForm notebookForm = new NotebookForm(notebook);               
 
                 notebookForm.Show();
-
-                computers.Add(notebook);              
+                
+                computers.Add(notebook);             
             }
             else if (radioButtonDesktop.Checked == true)
             {
@@ -74,6 +74,15 @@ namespace laba8
             ChangeYear changeYear = new ChangeYear(selectedComputer);
 
             changeYear.Show();
+        }
+
+        private void buttonCopy_Click(object sender, EventArgs e)
+        {
+            Computer selectedComputer = (Computer)listBoxComputer.SelectedItem;
+
+            var comp = new Desktop((Desktop)selectedComputer);
+
+            computers.Add(comp);
         }
     }
 }

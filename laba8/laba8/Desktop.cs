@@ -31,6 +31,13 @@ namespace laba8
         {
         }
 
+        public Desktop(Desktop desktop) : base(desktop)
+        {
+            PowerBlock = desktop.PowerBlock;
+
+            TypeBody = desktop.TypeBody;
+        }
+
         public override bool Equals(object obj)
         {
             if (obj is Desktop
@@ -58,7 +65,9 @@ namespace laba8
           $"Видеокарта: {GPU}\n" +
           $"Блок питания: {PowerBlock}\n" +
           $"Тип корпуса: {TypeBody}\n" +
-          $"Дата: {GetDate.ToString("dd:MM:yyyy")}";
+          $"Дата: {GetDate.ToString("dd:MM:yyyy")}\n" +
+          $"Цена с ндс:{PriceWithNds}\n" +
+          $"Цена без ндс:{PriceWithoutNds}";
 
         public override string ToString() => string.Format($"Десктоп| Процессор: {CPU}" +
             $" Видеокарта: {GPU}" +

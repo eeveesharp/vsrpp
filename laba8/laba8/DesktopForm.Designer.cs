@@ -45,11 +45,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.datePickerForDesk = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonSetData
             // 
-            this.buttonSetData.Location = new System.Drawing.Point(303, 341);
+            this.buttonSetData.Location = new System.Drawing.Point(286, 371);
             this.buttonSetData.Name = "buttonSetData";
             this.buttonSetData.Size = new System.Drawing.Size(81, 23);
             this.buttonSetData.TabIndex = 29;
@@ -218,11 +220,29 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "Дата";
             // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(286, 336);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(121, 20);
+            this.textBoxPrice.TabIndex = 35;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(212, 343);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Цена";
+            // 
             // DesktopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 389);
+            this.ClientSize = new System.Drawing.Size(546, 419);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.datePickerForDesk);
             this.Controls.Add(this.label2);
@@ -266,5 +286,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker datePickerForDesk;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.Label label4;
     }
 }
