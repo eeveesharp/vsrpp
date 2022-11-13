@@ -101,8 +101,6 @@ namespace laba8
             Computer selectedComputer = (Computer)listBoxComputer.SelectedItem;
 
             computers.Remove(selectedComputer);
-
-            MessageBox.Show(selectedComputer.Sell());
         }
     }
 }

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,49 +49,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangeYear.cs">
+    <Compile Include="Enums\Role.cs" />
+    <Compile Include="Forms\AuthForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeYear.Designer.cs">
+    <Compile Include="Forms\AuthForm.Designer.cs">
+      <DependentUpon>AuthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeYear.Designer.cs">
       <DependentUpon>ChangeYear.cs</DependentUpon>
     </Compile>
-    <Compile Include="Computer.cs" />
-    <Compile Include="ComputerCollection.cs" />
-    <Compile Include="Desktop.cs" />
-    <Compile Include="DesktopForm.cs">
+    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\Computer.cs" />
+    <Compile Include="Collections\ComputerCollection.cs" />
+    <Compile Include="Models\Desktop.cs" />
+    <Compile Include="Forms\DesktopForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DesktopForm.Designer.cs">
+    <Compile Include="Forms\DesktopForm.Designer.cs">
       <DependentUpon>DesktopForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DesktopCollection.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Collections\DesktopCollection.cs" />
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ISell.cs" />
-    <Compile Include="Notebook.cs" />
-    <Compile Include="NotebookForm.cs">
+    <Compile Include="Interfaces\ISell.cs" />
+    <Compile Include="Models\Notebook.cs" />
+    <Compile Include="Forms\NotebookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NotebookForm.Designer.cs">
+    <Compile Include="Forms\NotebookForm.Designer.cs">
       <DependentUpon>NotebookForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NotebookCollection.cs" />
+    <Compile Include="Collections\NotebookCollection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChangeYear.resx">
+    <Compile Include="Services\File.cs" />
+    <Compile Include="Storage\AdministratorStorage.cs" />
+    <EmbeddedResource Include="Forms\AuthForm.resx">
+      <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeYear.resx">
       <DependentUpon>ChangeYear.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DesktopForm.resx">
+    <EmbeddedResource Include="Forms\DesktopForm.resx">
       <DependentUpon>DesktopForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotebookForm.resx">
+    <EmbeddedResource Include="Forms\NotebookForm.resx">
       <DependentUpon>NotebookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -100,6 +116,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -113,5 +130,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,7 +1,10 @@
-﻿using System;
+﻿using laba8.Enums;
+using laba8.Forms;
+using laba8.Models;
+using laba8.Services;
+using laba8.Storage;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace laba8
@@ -16,7 +19,10 @@ namespace laba8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            File.ReadFile();
+
+            Application.Run(new AuthForm());
         }
     }
 }
