@@ -20,7 +20,9 @@ namespace laba8
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            File.ReadFile();
+            File<Administrator>.ReadFile("administrators");
+
+            File<Computer>.ReadFile("computers");
 
             Application.Run(new AuthForm());
         }

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace laba8.Services
 {
-    public static class File
+    public static class File<T>
     {
-        public static void WriteFile(List<Administrator> administrators)
+        public static void WriteFile(List<T> administrators, string name)
         {
-            using (FileStream fs = new FileStream($"administrators.json", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream($"{name}.json", FileMode.OpenOrCreate))
             {
                 byte[] array = System.Text.Encoding.Default.GetBytes(JsonConvert.SerializeObject(administrators));
 
@@ -20,11 +20,11 @@ namespace laba8.Services
             }
         }
 
-        public static void ReadFile()
+        public static void ReadFile(string name)
         {
             string fileContent;
 
-            using (FileStream fs = new FileStream($"administrators.json", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream($"{name}.json", FileMode.OpenOrCreate))
             {
                 byte[] array = new byte[fs.Length];
 
@@ -33,7 +33,16 @@ namespace laba8.Services
                 fileContent = System.Text.Encoding.Default.GetString(array);
             }
 
-            AdministratorStorage.AdministratorsList = JsonConvert.DeserializeObject<List<Administrator>>(fileContent);
+            if (name == "administrators")
+            {
+                AdministratorStorage.AdministratorsList = JsonConvert.DeserializeObject<List<Administrator>>(fileContent);
+            }
+            else
+            {
+                ComputerStorage.ComputersList = JsonConvert.DeserializeObject<List<Computer>>(fileContent);
+            }
+
+            
         }
     }
 }

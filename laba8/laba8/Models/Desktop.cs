@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace laba8
 {
+    [Serializable]
     public class Desktop : Computer
     {
         public int PowerBlock { get; set; }

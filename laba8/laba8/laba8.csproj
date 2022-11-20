@@ -62,6 +62,24 @@
     <Compile Include="Forms\ChangeYear.Designer.cs">
       <DependentUpon>ChangeYear.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChoiceForm.Designer.cs">
+      <DependentUpon>ChoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InformationForm.Designer.cs">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsForm.Designer.cs">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Collections\ComputerCollection.cs" />
@@ -92,11 +110,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\File.cs" />
     <Compile Include="Storage\AdministratorStorage.cs" />
+    <Compile Include="Storage\ComputerStorage.cs" />
     <EmbeddedResource Include="Forms\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeYear.resx">
       <DependentUpon>ChangeYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChoiceForm.resx">
+      <DependentUpon>ChoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DesktopForm.resx">
       <DependentUpon>DesktopForm.cs</DependentUpon>
@@ -104,8 +126,14 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InformationForm.resx">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NotebookForm.resx">
       <DependentUpon>NotebookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsForm.resx">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

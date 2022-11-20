@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace laba8
 {
+    [Serializable]
     public class Notebook : Computer
     {
         public string TypeBattery { get; set; }

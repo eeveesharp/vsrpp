@@ -1,4 +1,5 @@
-﻿using laba8.Storage;
+﻿using laba8.Models;
+using laba8.Storage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,15 +32,19 @@ namespace laba8.Forms
 
         private void buttonSingIn_Click(object sender, EventArgs e)
         {
+            Administrator admin = null;
+
             if (radioButtonAdministratorForAuth.Checked == true)
             {
                 bool isValidData = IsValidAdministrator(comboBoxSecondNameForAuth.Text, textBoxPasswordForAuth.Text);
 
                 if (isValidData)
                 {
-                    MainForm mainForm = new MainForm();
+                    admin = GetAdmin(comboBoxSecondNameForAuth.Text, textBoxPasswordForAuth.Text);
 
-                    mainForm.Show();
+                    ChoiceForm choiceForm = new ChoiceForm(admin);
+
+                    choiceForm.Show();
                 }
                 else
                 {
@@ -48,9 +53,9 @@ namespace laba8.Forms
             }
             else
             {
-                MainForm mainForm = new MainForm();
+                ChoiceForm choiceForm = new ChoiceForm(admin);
 
-                mainForm.Show();
+                choiceForm.Show();
             }          
         }
 
@@ -71,6 +76,19 @@ namespace laba8.Forms
             }
 
             return false;
+        }
+
+        private Administrator GetAdmin(string secondName, string password)
+        {
+            foreach (var item in AdministratorStorage.AdministratorsList)
+            {
+                if (item.SecondName == secondName && item.Password == password)
+                {
+                    return item;
+                }
+            }
+
+            return null;
         }
     }
 }
