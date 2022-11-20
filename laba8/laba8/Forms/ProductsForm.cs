@@ -1,4 +1,5 @@
-﻿using System;
+﻿using laba8.Storage;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace laba8.Forms
         public ProductsForm()
         {
             InitializeComponent();
+
+            foreach (var item in ComputerStorage.ComputersList)
+            {
+                listBox1.Items.Add(item);
+            }
         }
     }
 }

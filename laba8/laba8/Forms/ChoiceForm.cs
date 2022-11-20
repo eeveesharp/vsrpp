@@ -41,5 +41,12 @@ namespace laba8.Forms
 
             informationForm.Show();
         }
+
+        private void buttonProducts_Click(object sender, EventArgs e)
+        {
+            ProductsForm productsForm = new ProductsForm();
+
+            productsForm.Show();
+        }
     }
 }
