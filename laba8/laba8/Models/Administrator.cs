@@ -18,11 +18,13 @@ namespace laba8.Models
 
         public int Age { get; set; }
 
-        public string Role 
-        {
-            get => _role.ToString();
+        //public string Role
+        //{
+        //    get => _role.ToString();
 
-            set => _role = (Role)Enum.Parse(typeof(Role), value);
-        }
+        //    set => _role = (Role)Enum.Parse(typeof(Role), value);
+        //}
+
+        public int Role { get; set; }
     }
 }

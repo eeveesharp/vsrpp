@@ -66,14 +66,17 @@ namespace laba8
           $"Видеокарта: {GPU}\n" +
           $"Блок питания: {PowerBlock}\n" +
           $"Тип корпуса: {TypeBody}\n" +
-          $"Дата: {GetDate.ToString("dd:MM:yyyy")}\n" +
+          $"Дата: {GetDate.ToShortDateString()}\n" +
           $"Цена с ндс:{PriceWithNds}\n" +
           $"Цена без ндс:{PriceWithoutNds}";
 
-        public override string ToString() => string.Format($"Десктоп| Процессор: {CPU}" +
-            $" Видеокарта: {GPU}" +
-            $" Блок питания: {PowerBlock}" +
-            $"Год: {Year}");
+        public override string ToString() => string.Format($"Десктоп| Процессор: {CPU} " +
+            $" Видеокарта: {GPU} " +
+            $" Блок питания: {PowerBlock} " +
+            $" Количество оперативной памяти: {NumberOfRAM} " +
+            $" Цена: {PriceWithoutNds} " +
+            $" Дата изготовления: {GetDate.ToShortDateString()}"
+            );
 
         public static bool operator == (Desktop comp1, Desktop comp2)
         {

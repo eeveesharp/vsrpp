@@ -56,6 +56,12 @@
     <Compile Include="Forms\AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BuyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuyForm.Designer.cs">
+      <DependentUpon>BuyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ChangeYear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,10 +115,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\File.cs" />
+    <Compile Include="Services\SortServices.cs" />
     <Compile Include="Storage\AdministratorStorage.cs" />
     <Compile Include="Storage\ComputerStorage.cs" />
     <EmbeddedResource Include="Forms\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BuyForm.resx">
+      <DependentUpon>BuyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeYear.resx">
       <DependentUpon>ChangeYear.cs</DependentUpon>

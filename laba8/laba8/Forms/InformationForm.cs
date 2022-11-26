@@ -1,5 +1,7 @@
 ﻿using laba8.Enums;
 using laba8.Models;
+using laba8.Services;
+using laba8.Storage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,7 +53,9 @@ namespace laba8.Forms
             _administrator.Age = int.Parse(textBoxAgeInfo.Text);
             _administrator.Password = textBoxPasswordInfo.Text;
             _administrator.SecondName = textBoxSecondNameInfo.Text;
-            _administrator.Role = comboBoxRoleInfo.Text;
+           // _administrator.Role = comboBoxRoleInfo.Text;
+
+            File<Administrator>.WriteFile(AdministratorStorage.AdministratorsList, "administrators");           
 
             Close();
         }

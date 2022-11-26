@@ -13,7 +13,7 @@ namespace laba8
 
         public double WorkHours { get; set; }
 
-        public Notebook(string typeBattery, 
+        public Notebook(string typeBattery,
             double workHours)
             : base()
         {
@@ -65,18 +65,25 @@ namespace laba8
           $"Количество ядер: {NumberOfCore}\n" +
           $"Видеокарта: {GPU}\n" +
           $"Тип батареи: {TypeBattery}\n" +
-          $"Время работы: {WorkHours}";
+          $"Время работы: {WorkHours}\n" +
+          $"Цена с ндс:{PriceWithNds}\n" +
+          $"Цена без ндс:{PriceWithoutNds}";
 
-        public override string ToString() => string.Format($"Ноутбук| Процессор: {CPU} " +          
-            $"Видеокарта: {GPU}");
+        public override string ToString() => string.Format($"Ноутбук| Процессор: {CPU} " +
+            $"Видеокарта: {GPU} " +
+            $"Количество оперативной памяти: {NumberOfRAM} " +
+            $"Время работы: {WorkHours} " +
+            $"Цена: {PriceWithoutNds} " +
+            $"Дата изготовления: {GetDate.ToShortDateString()}"
+            );
 
 
-        public static bool operator == (Notebook comp1, Notebook comp2)
+        public static bool operator ==(Notebook comp1, Notebook comp2)
         {
             return comp1.Equals(comp2);
         }
 
-        public static bool operator != (Notebook comp1, Notebook comp2)
+        public static bool operator !=(Notebook comp1, Notebook comp2)
         {
             return !comp1.Equals(comp2);
         }

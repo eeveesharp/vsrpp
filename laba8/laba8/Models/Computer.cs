@@ -174,7 +174,7 @@ namespace laba8
 
         public void Sell()
         {
-            IsSell = false;
+            IsSell = true;
             Owner = "Ivan Ivanov";
             DateSell = DateTime.Now;
         }

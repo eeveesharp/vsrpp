@@ -9,9 +9,9 @@ namespace laba8
 {
     public class ComputerCollection : IEnumerable, IComparer<Computer>
     {
-        private List<Computer> _computers;
+        private IEnumerable<Computer> _computers;
 
-        public ComputerCollection(List<Computer> computers)
+        public ComputerCollection(IEnumerable<Computer> computers)
         {
             _computers = computers; 
         }

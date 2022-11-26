@@ -15,38 +15,55 @@ namespace laba8.Forms
     {
         private Administrator _administrator;
 
-        public ChoiceForm(Administrator administrator)
+        private AuthForm _authForm;
+
+        public ChoiceForm(AuthForm authForm, Administrator administrator)
         {
             InitializeComponent();
 
             _administrator = administrator;
 
-            if (administrator is null)
+            _authForm = authForm;
+        }
+
+        public ChoiceForm(AuthForm authForm)
+        {
+            InitializeComponent();
+
+            _authForm = authForm;
+
+            if (_administrator is null)
             {
                 buttonAdminInformation.Visible = false;
                 button3.Visible = false;
             }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             MainForm mainForm = new MainForm();
 
-            mainForm.Show();
+            mainForm.ShowDialog();
         }
 
         private void buttonAdminInformation_Click(object sender, EventArgs e)
         {
             InformationForm informationForm = new InformationForm(_administrator);
 
-            informationForm.Show();
+            informationForm.ShowDialog();
         }
 
         private void buttonProducts_Click(object sender, EventArgs e)
         {
             ProductsForm productsForm = new ProductsForm();
 
-            productsForm.Show();
+            productsForm.ShowDialog();
+        }
+
+        private void buttonSingOut_Click(object sender, EventArgs e)
+        {
+            _authForm.Close();
         }
     }
 }

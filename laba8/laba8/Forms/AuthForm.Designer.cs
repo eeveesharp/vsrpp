@@ -38,6 +38,7 @@
             // radioButtonAdministratorForAuth
             // 
             this.radioButtonAdministratorForAuth.AutoSize = true;
+            this.radioButtonAdministratorForAuth.Checked = true;
             this.radioButtonAdministratorForAuth.Location = new System.Drawing.Point(76, 74);
             this.radioButtonAdministratorForAuth.Name = "radioButtonAdministratorForAuth";
             this.radioButtonAdministratorForAuth.Size = new System.Drawing.Size(104, 17);
@@ -54,7 +55,6 @@
             this.radioButtonUserForAuth.Name = "radioButtonUserForAuth";
             this.radioButtonUserForAuth.Size = new System.Drawing.Size(98, 17);
             this.radioButtonUserForAuth.TabIndex = 1;
-            this.radioButtonUserForAuth.TabStop = true;
             this.radioButtonUserForAuth.Text = "Пользователь";
             this.radioButtonUserForAuth.UseVisualStyleBackColor = true;
             this.radioButtonUserForAuth.CheckedChanged += new System.EventHandler(this.radioButtonUserForAuth_CheckedChanged);

@@ -5,6 +5,6 @@ namespace laba8.Storage
 {
     public static class AdministratorStorage
     {
-        public static List<Administrator> AdministratorsList { get; set; }
+        public static IEnumerable<Administrator> AdministratorsList { get; set; }
     }
 }

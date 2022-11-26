@@ -31,6 +31,7 @@
             this.buttonAdminInformation = new System.Windows.Forms.Button();
             this.buttonProducts = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.buttonSingOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonAdminInformation
@@ -63,11 +64,22 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // buttonSingOut
+            // 
+            this.buttonSingOut.Location = new System.Drawing.Point(138, 317);
+            this.buttonSingOut.Name = "buttonSingOut";
+            this.buttonSingOut.Size = new System.Drawing.Size(75, 23);
+            this.buttonSingOut.TabIndex = 3;
+            this.buttonSingOut.Text = "Выход";
+            this.buttonSingOut.UseVisualStyleBackColor = true;
+            this.buttonSingOut.Click += new System.EventHandler(this.buttonSingOut_Click);
+            // 
             // ChoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 352);
+            this.ClientSize = new System.Drawing.Size(361, 361);
+            this.Controls.Add(this.buttonSingOut);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonProducts);
             this.Controls.Add(this.buttonAdminInformation);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Button buttonAdminInformation;
         private System.Windows.Forms.Button buttonProducts;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonSingOut;
     }
 }

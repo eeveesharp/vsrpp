@@ -9,7 +9,7 @@ namespace laba8
 {
     public class NotebookCollection : IComparer<Notebook>, IEnumerator
     {
-        private List<Desktop> _computers;
+        private List<Notebook> _computers;
 
         int position = -1;
 
@@ -23,7 +23,7 @@ namespace laba8
             }
         }
 
-        public NotebookCollection(List<Desktop> computers)
+        public NotebookCollection(List<Notebook> computers)
         {
             _computers = computers;
         }

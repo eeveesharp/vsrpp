@@ -21,7 +21,10 @@ namespace laba8.Forms
             foreach (var item in AdministratorStorage.AdministratorsList)
             {
                 comboBoxSecondNameForAuth.Items.Add(item.SecondName);
-            }           
+            }
+
+            comboBoxSecondNameForAuth.Visible = true;
+            textBoxPasswordForAuth.Visible = true;
         }
 
         private void radioButtonAdministratorForAuth_CheckedChanged(object sender, EventArgs e)
@@ -42,9 +45,10 @@ namespace laba8.Forms
                 {
                     admin = GetAdmin(comboBoxSecondNameForAuth.Text, textBoxPasswordForAuth.Text);
 
-                    ChoiceForm choiceForm = new ChoiceForm(admin);
+                    ChoiceForm choiceForm = new ChoiceForm(this, admin);
 
-                    choiceForm.Show();
+                    choiceForm.ShowDialog();
+
                 }
                 else
                 {
@@ -53,10 +57,10 @@ namespace laba8.Forms
             }
             else
             {
-                ChoiceForm choiceForm = new ChoiceForm(admin);
+                ChoiceForm choiceForm = new ChoiceForm(this);
 
-                choiceForm.Show();
-            }          
+                choiceForm.ShowDialog();
+            }
         }
 
         private void radioButtonUserForAuth_CheckedChanged(object sender, EventArgs e)

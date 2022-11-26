@@ -20,9 +20,35 @@ namespace laba8
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            File<Administrator>.ReadFile("administrators");
+            //AdministratorStorage.AdministratorsList = new List<Administrator>()
+            //{
+            //    new Administrator(){ SecondName = "Ivanov", Password = "12345678", Age = 18, Role = 1 },
+            //    new Administrator(){ SecondName = "Ivanov1", Password = "qwerty", Age = 35, Role = 2 },
+            //    new Administrator(){ SecondName = "Ivanov2", Password = "asdfgh", Age = 54, Role = 3 }
+            //};
 
-            File<Computer>.ReadFile("computers");
+            ComputerStorage.ComputersList = new List<Computer>()
+            {
+                new Notebook(){ CPU = "intel", GPU = "nvidia", NumberOfCore = 8, NumberOfRAM = 16, PriceWithoutNds = 2000, WorkHours = 12, TypeBattery = "LiOn", SetDate = new DateTime(2022,3,4)},
+                new Notebook(){ CPU = "intel", GPU = "nvidia", NumberOfCore = 8, NumberOfRAM = 16, PriceWithoutNds = 2000, WorkHours = 8, TypeBattery = "LiOn", SetDate = new DateTime(2020,5,9)},
+                new Desktop(){ CPU = "AMD", GPU = "nvidia", NumberOfCore = 16, NumberOfRAM = 16, PriceWithoutNds = 3500, TypeBody = "small", PowerBlock = 650, SetDate = new DateTime(2017,11,15) },
+                new Notebook(){ CPU = "intel", GPU = "nvidia", NumberOfCore = 8, NumberOfRAM = 16, PriceWithoutNds = 2300, WorkHours = 10, TypeBattery = "LiOn", SetDate = new DateTime(2021,3,4)},
+                new Desktop(){ CPU = "intel", GPU = "AMD", NumberOfCore = 8, NumberOfRAM = 16, PriceWithoutNds = 3000, TypeBody = "big", PowerBlock = 800, SetDate = new DateTime(2017,3,4)},
+                new Notebook(){ CPU = "AMD", GPU = "nvidia", NumberOfCore = 8, NumberOfRAM = 16, PriceWithoutNds = 2000, WorkHours = 12, TypeBattery = "LiOn", SetDate = new DateTime(2017,7,4)},
+                new Notebook(){ CPU = "AMD", GPU = "nvidia", NumberOfCore = 8, NumberOfRAM = 16, PriceWithoutNds = 2000, WorkHours = 11, TypeBattery = "LiOn", SetDate = new DateTime(2017,7,4)},
+                new Notebook(){ CPU = "AMD", GPU = "nvidia", NumberOfCore = 8, NumberOfRAM = 16, PriceWithoutNds = 2000, WorkHours = 13, TypeBattery = "LiOn", SetDate = new DateTime(2017,7,4)},
+                new Desktop(){ CPU = "intel", GPU = "AMD", NumberOfCore = 8, NumberOfRAM = 16, PriceWithoutNds = 3000, TypeBody = "big", PowerBlock = 500, SetDate = new DateTime(2017,3,4)},
+                new Desktop(){ CPU = "intel", GPU = "AMD", NumberOfCore = 8, NumberOfRAM = 16, PriceWithoutNds = 3000, TypeBody = "big", PowerBlock = 800, SetDate = new DateTime(2017,3,4)},
+
+            };
+
+            //File<Administrator>.WriteFile(AdministratorStorage.AdministratorsList, "administrators");
+
+            //File<Computer>.WriteFile(ComputerStorage.ComputersList, "computers");
+
+            AdministratorStorage.AdministratorsList = File<Administrator>.ReadFile("administrators");
+
+            //ComputerStorage.ComputersList = File<Computer>.ReadFile("computers");
 
             Application.Run(new AuthForm());
         }

@@ -10,7 +10,7 @@ namespace laba8.Services
 {
     public static class File<T>
     {
-        public static void WriteFile(List<T> administrators, string name)
+        public static void WriteFile(IEnumerable<T> administrators, string name)
         {
             using (FileStream fs = new FileStream($"{name}.json", FileMode.OpenOrCreate))
             {
@@ -20,7 +20,7 @@ namespace laba8.Services
             }
         }
 
-        public static void ReadFile(string name)
+        public static IEnumerable<T> ReadFile(string name)
         {
             string fileContent;
 
@@ -33,16 +33,7 @@ namespace laba8.Services
                 fileContent = System.Text.Encoding.Default.GetString(array);
             }
 
-            if (name == "administrators")
-            {
-                AdministratorStorage.AdministratorsList = JsonConvert.DeserializeObject<List<Administrator>>(fileContent);
-            }
-            else
-            {
-                ComputerStorage.ComputersList = JsonConvert.DeserializeObject<List<Computer>>(fileContent);
-            }
-
-            
+            return JsonConvert.DeserializeObject<IEnumerable<T>>(fileContent);
         }
     }
 }
