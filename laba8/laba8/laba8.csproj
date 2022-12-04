@@ -132,6 +132,7 @@
     <Compile Include="Services\SortServices.cs" />
     <Compile Include="Storage\AdministratorStorage.cs" />
     <Compile Include="Storage\ComputerStorage.cs" />
+    <Compile Include="Storage\HistoryStorage.cs" />
     <EmbeddedResource Include="Forms\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>

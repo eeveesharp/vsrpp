@@ -14,8 +14,6 @@ namespace laba8
 
         public event EventHandler OnChange;
 
-        public event EventHandler OnSell;
-
-        public List<string> History = new List<string>();
+        public event EventHandler OnSell;       
     }
 }

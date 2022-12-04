@@ -17,6 +17,8 @@ namespace laba8
     {
         private readonly Administrator _administrator;
 
+        private readonly Journal _journal = new Journal();
+
         public MainForm(Administrator administrator)
         {
             InitializeComponent();
@@ -29,6 +31,11 @@ namespace laba8
             {
                 listBoxComputer.Items.Add(ComputerStorage.ComputersList[i]);
             }
+
+            _journal.OnChange += new EventHandler(Listener.Change);
+            _journal.OnAdd += new EventHandler(Listener.Add);
+            _journal.OnSell += new EventHandler(Listener.Sell);
+            _journal.OnDelete += new EventHandler(Listener.Delete);
         }
 
         private void buttonEnterData_Click(object sender, EventArgs e)
@@ -43,7 +50,7 @@ namespace laba8
 
                 notebookForm.ShowDialog();
                 
-                ComputerStorage.ComputersList.Add(notebook);             
+                ComputerStorage.ComputersList.Add(notebook);
             }
             else if (radioButtonDesktop.Checked == true)
             {
@@ -51,7 +58,7 @@ namespace laba8
 
                 desktopForm.ShowDialog();
 
-                ComputerStorage.ComputersList.Add(desktop);                
+                ComputerStorage.ComputersList.Add(desktop);                                 
             }
 
             listBoxComputer.Items.Clear();
