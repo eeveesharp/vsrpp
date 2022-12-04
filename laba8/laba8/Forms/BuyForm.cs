@@ -1,4 +1,5 @@
 ﻿using laba8.Models;
+using laba8.Storage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,8 @@ namespace laba8.Forms
             InitializeComponent();
 
             _computer = computer;
+
+            HistoryStorage.Journal.OnSell += Listener.Sell;
 
             labelInfo.Text = computer.Show();
 
@@ -63,6 +66,8 @@ namespace laba8.Forms
         private void buttonSell_Click(object sender, EventArgs e)
         {
             _computer.Sell();
+
+            HistoryStorage.Journal.Sell(_computer);
 
             Close();
         }

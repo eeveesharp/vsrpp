@@ -1,4 +1,5 @@
 ﻿using laba8.Models;
+using laba8.Services;
 using laba8.Storage;
 using System;
 using System.Collections.Generic;
@@ -93,6 +94,15 @@ namespace laba8.Forms
             }
 
             return null;
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                File<string>.WriteFile(HistoryStorage.History, "History");
+
+                Application.Exit();
+            }
         }
     }
 }

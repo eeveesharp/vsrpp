@@ -9,30 +9,34 @@ namespace laba8
 {
     public class Listener
     {      
-        public static void Add(object sender, Computer e)
+        public static void Add(Computer e)
         {
-            string str = $"Добавлен элемент :{e.ToString()}";
+            string str = $"{DateTime.Now}-Добавлен элемент :{e.ToString()}";
+
+            HistoryStorage.History.Add(str);
+
+            ComputerStorage.ComputersList.Add(e);
+        }
+
+        public static void Delete(Computer e)
+        {
+            string str = $"{DateTime.Now}-Удален элемент: {e.ToString()}";
+
+            HistoryStorage.History.Add(str);
+
+            ComputerStorage.ComputersList.Remove(e);
+        }
+
+        public static void Change(Computer e)
+        {
+            string str = $"{DateTime.Now}-Изменен элемент: {e.ToString()}";
 
             HistoryStorage.History.Add(str);
         }
 
-        public static void Delete(object sender, Computer e)
+        public static void Sell(Computer e)
         {
-            string str = $"Удален элемент: {e.ToString()}";
-
-            HistoryStorage.History.Add(str);
-        }
-
-        public static void Change(object sender, Computer e)
-        {
-            string str = "Изменен";
-
-            HistoryStorage.History.Add(str);
-        }
-
-        public static void Sell(object sender, Computer e)
-        {
-            string str = $"Продан элемент: {e.ToString()}";
+            string str = $"{DateTime.Now}-Продан элемент: {e.ToString()}";
 
             HistoryStorage.History.Add(str);
         }

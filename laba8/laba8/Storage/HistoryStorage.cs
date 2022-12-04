@@ -8,6 +8,8 @@ namespace laba8.Storage
 {
     public static class HistoryStorage
     {
-        public static List<string> History = new List<string>();
+        public static Journal<Computer> Journal{get; set;}
+
+        public static List<string> History { get; set; }
     }
 }

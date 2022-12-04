@@ -1,4 +1,5 @@
 ﻿using laba8.Models;
+using laba8.Storage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,8 @@ namespace laba8.Forms
         public NotebookFormChange(Administrator administrator, Notebook notebook)
         {
             InitializeComponent();
+
+            HistoryStorage.Journal.OnChange += Listener.Change;
 
             _administrator = administrator;
 
@@ -105,6 +108,15 @@ namespace laba8.Forms
 
                 _notebook.PriceWithoutNds = int.Parse(textBoxPrice.Text);
             }
+
+            HistoryStorage.Journal.Change(_notebook);
+
+            Close();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            HistoryStorage.Journal.Remove(_notebook);
 
             Close();
         }

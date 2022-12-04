@@ -48,6 +48,7 @@
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.buttonChangeData = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxCPU
@@ -247,11 +248,22 @@
             this.buttonChangeData.UseVisualStyleBackColor = true;
             this.buttonChangeData.Click += new System.EventHandler(this.buttonChangeData_Click);
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(199, 352);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 21;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // NotebookFormChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 387);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonChangeData);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBoxPrice);
@@ -301,5 +313,6 @@
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button buttonChangeData;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

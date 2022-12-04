@@ -93,7 +93,7 @@
             // 
             // buttonShowData
             // 
-            this.buttonShowData.Location = new System.Drawing.Point(375, 220);
+            this.buttonShowData.Location = new System.Drawing.Point(479, 220);
             this.buttonShowData.Name = "buttonShowData";
             this.buttonShowData.Size = new System.Drawing.Size(125, 23);
             this.buttonShowData.TabIndex = 4;
@@ -103,7 +103,7 @@
             // 
             // buttonChangeYear
             // 
-            this.buttonChangeYear.Location = new System.Drawing.Point(619, 220);
+            this.buttonChangeYear.Location = new System.Drawing.Point(610, 218);
             this.buttonChangeYear.Name = "buttonChangeYear";
             this.buttonChangeYear.Size = new System.Drawing.Size(125, 25);
             this.buttonChangeYear.TabIndex = 5;
@@ -113,7 +113,7 @@
             // 
             // buttonCopy
             // 
-            this.buttonCopy.Location = new System.Drawing.Point(890, 221);
+            this.buttonCopy.Location = new System.Drawing.Point(741, 220);
             this.buttonCopy.Name = "buttonCopy";
             this.buttonCopy.Size = new System.Drawing.Size(125, 23);
             this.buttonCopy.TabIndex = 6;

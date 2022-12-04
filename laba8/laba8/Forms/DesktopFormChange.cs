@@ -1,4 +1,5 @@
 ﻿using laba8.Models;
+using laba8.Storage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,10 @@ namespace laba8.Forms
         public DesktopFormChange(Administrator administrator, Desktop desktop)
         {
             InitializeComponent();
+
+            HistoryStorage.Journal.OnChange += Listener.Change;
+
+            HistoryStorage.Journal.OnRemove += Listener.Delete;
 
             _administrator = administrator;
 
@@ -56,6 +61,8 @@ namespace laba8.Forms
 
                 return;
             }
+
+            HistoryStorage.Journal.Change(_desktop);
 
             Close();
         }
@@ -113,6 +120,13 @@ namespace laba8.Forms
             textBoxPrice.Text = _desktop.PriceWithoutNds.ToString();
 
             datePickerForDesk.Text = _desktop.GetDate.ToShortDateString();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            HistoryStorage.Journal.Remove(_desktop);
+
+            Close();
         }
     }
 }

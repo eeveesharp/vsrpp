@@ -17,8 +17,6 @@ namespace laba8
     {
         private readonly Administrator _administrator;
 
-        private readonly Journal<Computer> _journal = new Journal<Computer>();
-
         public MainForm(Administrator administrator)
         {
             InitializeComponent();
@@ -27,15 +25,12 @@ namespace laba8
 
             listBoxComputer.Items.Clear();
 
-            for (int i = 0; i < ComputerStorage.ComputersList.Count; i++)
+            foreach (var item in HistoryStorage.Journal)
             {
-                listBoxComputer.Items.Add(ComputerStorage.ComputersList[i]);
+                listBoxComputer.Items.Add(item);
             }
 
-            //_journal.OnChange += new EventHandler(Listener.Change);
-            _journal.OnAdd += Listener.Add;
-            //_journal.OnSell += new EventHandler(Listener.Sell);
-            //_journal.OnDelete += new EventHandler(Listener.Delete);
+            HistoryStorage.Journal.OnAdd += Listener.Add;  
         }
 
         private void buttonEnterData_Click(object sender, EventArgs e)
@@ -48,11 +43,9 @@ namespace laba8
             {
                 NotebookForm notebookForm = new NotebookForm(notebook);               
 
-                notebookForm.ShowDialog();
-                
-                ComputerStorage.ComputersList.Add(notebook);
+                notebookForm.ShowDialog();               
 
-                _journal.Create(notebook);
+                HistoryStorage.Journal.Add(notebook);
             }
             else if (radioButtonDesktop.Checked == true)
             {
@@ -60,14 +53,14 @@ namespace laba8
 
                 desktopForm.ShowDialog();
 
-                ComputerStorage.ComputersList.Add(desktop);                                 
+                HistoryStorage.Journal.Add(desktop);
             }
 
             listBoxComputer.Items.Clear();
 
-            for (int i = 0; i < ComputerStorage.ComputersList.Count; i++)
+            foreach (var item in HistoryStorage.Journal)
             {
-                listBoxComputer.Items.Add(ComputerStorage.ComputersList[i]);
+                listBoxComputer.Items.Add(item);
             }
         }
 
@@ -115,9 +108,9 @@ namespace laba8
 
                 listBoxComputer.Items.Clear();
 
-                for (int i = 0; i < ComputerStorage.ComputersList.Count; i++)
+                foreach (var item in HistoryStorage.Journal)
                 {
-                    listBoxComputer.Items.Add(ComputerStorage.ComputersList[i]);
+                    listBoxComputer.Items.Add(item);
                 }
             }
             else if (selectedComputer is Notebook)
@@ -128,9 +121,9 @@ namespace laba8
 
                 listBoxComputer.Items.Clear();
 
-                for (int i = 0; i < ComputerStorage.ComputersList.Count; i++)
+                foreach (var item in HistoryStorage.Journal)
                 {
-                    listBoxComputer.Items.Add(ComputerStorage.ComputersList[i]);
+                    listBoxComputer.Items.Add(item);
                 }
             }
         }

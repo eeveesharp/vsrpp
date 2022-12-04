@@ -12,9 +12,9 @@ namespace laba8.Services
     {
         public static void WriteFile(IEnumerable<T> administrators, string name)
         {
-            using (FileStream fs = new FileStream($"{name}.json", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream($"..\\..\\{name}.json", FileMode.OpenOrCreate))
             {
-                byte[] array = System.Text.Encoding.Default.GetBytes(JsonConvert.SerializeObject(administrators));
+                byte[] array = System.Text.Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(administrators));
 
                 fs.Write(array, 0, array.Length);
             }
@@ -30,7 +30,7 @@ namespace laba8.Services
 
                 fs.Read(array, 0, array.Length);
 
-                fileContent = System.Text.Encoding.Default.GetString(array);
+                fileContent = System.Text.Encoding.UTF8.GetString(array);
             }
 
             return JsonConvert.DeserializeObject<List<T>>(fileContent);

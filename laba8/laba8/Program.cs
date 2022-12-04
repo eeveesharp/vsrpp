@@ -48,6 +48,12 @@ namespace laba8
 
             AdministratorStorage.AdministratorsList = File<Administrator>.ReadFile("administrators");
 
+            HistoryStorage.Journal = new Journal<Computer>();
+
+            HistoryStorage.Journal.AddRange(ComputerStorage.ComputersList);
+
+            HistoryStorage.History = File<string>.ReadFile("History");
+
             //ComputerStorage.ComputersList = File<Computer>.ReadFile("computers");
 
             Application.Run(new AuthForm());

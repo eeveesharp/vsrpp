@@ -6,35 +6,52 @@ using System.Threading.Tasks;
 
 namespace laba8
 {
-    public class Journal<T>
+    public class Journal<T> : List<T>
     {
-        public event EventHandler<T> OnAdd;
+        public event MyDelegate OnAdd;
 
-        public void Create(T computer)
+        public delegate void MyDelegate(T item);
+
+        public new void Add(T computer)
         {
-            OnAdd?.Invoke(this, computer);
+            if (null != OnAdd)
+            {
+                OnAdd(computer);
+            }
+
+            base.Add(computer);
         }
 
 
-        public event EventHandler OnDelete;
+        public event MyDelegate OnRemove;
 
-        public void Delete()
+        public new void Remove(T computer)
         {
-            OnDelete?.Invoke(this, EventArgs.Empty);
+            if (null != OnRemove)
+            {
+                OnRemove(computer);
+            }
+
+            base.Remove(computer);
+        }
+        public event MyDelegate OnChange;
+
+        public void Change(T computer)
+        {
+            if (null != OnChange)
+            {
+                OnChange(computer);
+            }
         }
 
-        public event EventHandler OnChange;
+        public event MyDelegate OnSell;
 
-        //public void Change()
-        //{
-        //    OnAdd?.Invoke(this, EventArgs.Empty);
-        //}
-
-        //public event EventHandler OnSell;
-
-        //public void Sell()
-        //{
-        //    OnAdd?.Invoke(this, EventArgs.Empty);
-        //}
+        public void Sell(T computer)
+        {
+            if (null != OnSell)
+            {
+                OnSell(computer);
+            }
+        }
     }
 }

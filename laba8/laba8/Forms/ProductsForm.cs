@@ -30,7 +30,7 @@ namespace laba8.Forms
                 listBox1.Items.Add(item);
             }
 
-            if (_administrator != null && _administrator.Role == "Accountant" || _administrator.Role == "Chief")
+            if (_administrator != null && (_administrator.Role == "Accountant" || _administrator.Role == "Chief"))
             {
                 checkBoxSelledProducts.Visible = true;
             }
