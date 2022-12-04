@@ -40,6 +40,7 @@
             this.buttonFindByPrice = new System.Windows.Forms.Button();
             this.buttonFindByCPU = new System.Windows.Forms.Button();
             this.buttonFindByRam = new System.Windows.Forms.Button();
+            this.checkBoxSelledProducts = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // listBox1
@@ -164,11 +165,24 @@
             this.buttonFindByRam.UseVisualStyleBackColor = true;
             this.buttonFindByRam.Click += new System.EventHandler(this.buttonFindByRam_Click);
             // 
+            // checkBoxSelledProducts
+            // 
+            this.checkBoxSelledProducts.AutoSize = true;
+            this.checkBoxSelledProducts.Location = new System.Drawing.Point(787, 20);
+            this.checkBoxSelledProducts.Name = "checkBoxSelledProducts";
+            this.checkBoxSelledProducts.Size = new System.Drawing.Size(84, 17);
+            this.checkBoxSelledProducts.TabIndex = 13;
+            this.checkBoxSelledProducts.Text = "Проданные";
+            this.checkBoxSelledProducts.UseVisualStyleBackColor = true;
+            this.checkBoxSelledProducts.Visible = false;
+            this.checkBoxSelledProducts.CheckedChanged += new System.EventHandler(this.checkBoxSelledProducts_CheckedChanged);
+            // 
             // ProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 368);
+            this.Controls.Add(this.checkBoxSelledProducts);
             this.Controls.Add(this.buttonFindByRam);
             this.Controls.Add(this.buttonFindByCPU);
             this.Controls.Add(this.buttonFindByPrice);
@@ -202,5 +216,6 @@
         private System.Windows.Forms.Button buttonFindByPrice;
         private System.Windows.Forms.Button buttonFindByCPU;
         private System.Windows.Forms.Button buttonFindByRam;
+        private System.Windows.Forms.CheckBox checkBoxSelledProducts;
     }
 }

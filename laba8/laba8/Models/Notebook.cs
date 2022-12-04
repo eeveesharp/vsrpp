@@ -60,14 +60,25 @@ namespace laba8
             return false;
         }
 
-        public override string Show() => $"Процессор: {CPU}\n" +
+        public override string Show()
+        {
+            string sell = "В наличии";
+
+            if (IsSell)
+            {
+                sell = "Продан";
+            }
+
+            return $"Процессор: {CPU}\n" +
           $"Количество оперативной памяти: {NumberOfRAM}\n" +
           $"Количество ядер: {NumberOfCore}\n" +
           $"Видеокарта: {GPU}\n" +
           $"Тип батареи: {TypeBattery}\n" +
           $"Время работы: {WorkHours}\n" +
           $"Цена с ндс:{PriceWithNds}\n" +
-          $"Цена без ндс:{PriceWithoutNds}";
+          $"Цена без ндс:{PriceWithoutNds}\n" +
+          $"{sell}";
+        }
 
         public override string ToString() => string.Format($"Ноутбук| Процессор: {CPU} " +
             $"Видеокарта: {GPU} " +

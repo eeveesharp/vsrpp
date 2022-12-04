@@ -1,4 +1,6 @@
-﻿using laba8.Services;
+﻿using laba8.Enums;
+using laba8.Models;
+using laba8.Services;
 using laba8.Storage;
 using System;
 using System.Collections;
@@ -15,13 +17,22 @@ namespace laba8.Forms
 {
     public partial class ProductsForm : Form
     {
-        public ProductsForm()
+        private readonly Administrator _administrator;
+
+        public ProductsForm(Administrator administrator)
         {
+            _administrator = administrator;
+
             InitializeComponent();
 
             foreach (var item in ComputerStorage.ComputersList)
             {
                 listBox1.Items.Add(item);
+            }
+
+            if (_administrator != null &&_administrator.Role == "Accountant")
+            {
+                checkBoxSelledProducts.Visible = true;
             }
         }
 
@@ -35,13 +46,23 @@ namespace laba8.Forms
             }
             else
             {
-                BuyForm buyForm = new BuyForm(selectedComputer);
-
-                buyForm.ShowDialog();
-
-                if (selectedComputer.IsSell == true)
+                if (_administrator is null)
                 {
-                    listBox1.Items.Remove(selectedComputer);
+                    BuyForm buyForm = new BuyForm(selectedComputer);
+
+                    buyForm.ShowDialog();
+                }
+                else if (_administrator.Role == "Accountant")
+                {
+                    BuyForm buyForm = new BuyForm(selectedComputer, _administrator);
+
+                    buyForm.ShowDialog();
+                }
+                else if (_administrator.Role == "SalesDepartment" || _administrator.Role == "Chief")
+                {
+                    BuyForm buyForm = new BuyForm(selectedComputer, _administrator);
+
+                    buyForm.ShowDialog();
                 }
             }
         }
@@ -207,7 +228,7 @@ namespace laba8.Forms
                     if (item.Year == int.Parse(textBoxFind.Text))
                     {
                         listBox1.Items.Add(item);
-                    }                   
+                    }
                 }
             }
             else if (radioButtonAllNotebooks.Checked == true)
@@ -333,6 +354,72 @@ namespace laba8.Forms
                 foreach (var item in ComputerStorage.ComputersList)
                 {
                     if (item.NumberOfRAM == int.Parse(textBoxFind.Text))
+                    {
+                        listBox1.Items.Add(item);
+                    }
+                }
+            }
+        }
+
+        private void checkBoxSelledProducts_CheckedChanged(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            if (radioButtonAllDesktops.Checked == true)
+            {
+                if (checkBoxSelledProducts.Checked == true)
+                {
+                    foreach (var item in GetListDesktop())
+                    {
+                        if (item.IsSell == true)
+                        {
+                            listBox1.Items.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in GetListDesktop())
+                    {
+                        listBox1.Items.Add(item);
+                    }
+                }
+            }
+            else if (radioButtonAllNotebooks.Checked == true)
+            {
+                if (checkBoxSelledProducts.Checked == true)
+                {
+                    foreach (var item in GetListNotebook())
+                    {
+                        if (item.IsSell == true)
+                        {
+                            listBox1.Items.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in GetListNotebook())
+                    {
+                        listBox1.Items.Add(item);
+                    }
+                }
+            }
+            else
+            {
+                if (checkBoxSelledProducts.Checked == true)
+                {
+                    foreach (var item in ComputerStorage.ComputersList)
+                    {
+                        if (item.IsSell == true)
+                        {
+                            listBox1.Items.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in ComputerStorage.ComputersList)
                     {
                         listBox1.Items.Add(item);
                     }

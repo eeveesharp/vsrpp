@@ -1,4 +1,5 @@
-﻿using System;
+﻿using laba8.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,9 @@ namespace laba8.Forms
 {
     public partial class BuyForm : Form
     {
-        Computer _computer;
+        private readonly Computer _computer;
+
+        private readonly Administrator _administator;
 
         public BuyForm(Computer computer)
         {
@@ -21,6 +24,26 @@ namespace laba8.Forms
             _computer = computer;
 
             labelInfo.Text = computer.Show();
+
+            textBoxBuy.Visible = true;
+
+            buttonBuy.Visible = true;
+        }
+
+        public BuyForm(Computer computer, Administrator administator)
+        {
+            InitializeComponent();
+
+            labelInfo.Text = computer.Show();
+
+            _computer = computer;
+
+            _administator = administator;    
+
+            if (_administator.Role == "SalesDepartment" || _administator.Role == "Chief")
+            {
+                buttonSell.Visible = true;
+            }
         }
 
         private void buttonBuy_Click(object sender, EventArgs e)
@@ -35,6 +58,13 @@ namespace laba8.Forms
             {
                 MessageBox.Show("Error");
             }
+        }
+
+        private void buttonSell_Click(object sender, EventArgs e)
+        {
+            _computer.Sell();
+
+            Close();
         }
     }
 }

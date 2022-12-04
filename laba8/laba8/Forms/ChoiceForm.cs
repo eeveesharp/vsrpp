@@ -56,14 +56,14 @@ namespace laba8.Forms
 
         private void buttonProducts_Click(object sender, EventArgs e)
         {
-            ProductsForm productsForm = new ProductsForm();
+            ProductsForm productsForm = new ProductsForm(_administrator);
 
             productsForm.ShowDialog();
         }
 
         private void buttonSingOut_Click(object sender, EventArgs e)
         {
-            _authForm.Close();
+            this.Close();
         }
     }
 }
