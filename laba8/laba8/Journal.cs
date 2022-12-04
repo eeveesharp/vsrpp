@@ -6,14 +6,35 @@ using System.Threading.Tasks;
 
 namespace laba8
 {
-    public class Journal
+    public class Journal<T>
     {
-        public event EventHandler OnAdd;
+        public event EventHandler<T> OnAdd;
+
+        public void Create(T computer)
+        {
+            OnAdd?.Invoke(this, computer);
+        }
+
 
         public event EventHandler OnDelete;
 
+        public void Delete()
+        {
+            OnDelete?.Invoke(this, EventArgs.Empty);
+        }
+
         public event EventHandler OnChange;
 
-        public event EventHandler OnSell;       
+        //public void Change()
+        //{
+        //    OnAdd?.Invoke(this, EventArgs.Empty);
+        //}
+
+        //public event EventHandler OnSell;
+
+        //public void Sell()
+        //{
+        //    OnAdd?.Invoke(this, EventArgs.Empty);
+        //}
     }
 }

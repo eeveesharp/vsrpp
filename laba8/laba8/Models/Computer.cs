@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace laba8
 {
     [Serializable]
-    public class Computer : ISell, IComparable
+    public class Computer : EventArgs,ISell, IComparable
     {
         private DateTime _date;
 

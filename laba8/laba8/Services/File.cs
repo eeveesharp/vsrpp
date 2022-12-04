@@ -20,7 +20,7 @@ namespace laba8.Services
             }
         }
 
-        public static IEnumerable<T> ReadFile(string name)
+        public static List<T> ReadFile(string name)
         {
             string fileContent;
 
@@ -33,7 +33,7 @@ namespace laba8.Services
                 fileContent = System.Text.Encoding.Default.GetString(array);
             }
 
-            return JsonConvert.DeserializeObject<IEnumerable<T>>(fileContent);
+            return JsonConvert.DeserializeObject<List<T>>(fileContent);
         }
     }
 }
