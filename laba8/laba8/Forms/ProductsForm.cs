@@ -30,7 +30,7 @@ namespace laba8.Forms
                 listBox1.Items.Add(item);
             }
 
-            if (_administrator != null &&_administrator.Role == "Accountant")
+            if (_administrator != null && _administrator.Role == "Accountant" || _administrator.Role == "Chief")
             {
                 checkBoxSelledProducts.Visible = true;
             }
@@ -69,6 +69,8 @@ namespace laba8.Forms
 
         private void radioButtonAllDesktops_CheckedChanged(object sender, EventArgs e)
         {
+            checkBoxSelledProducts.Checked = false;
+
             listBox1.Items.Clear();
 
             button1.Visible = true;
@@ -83,6 +85,8 @@ namespace laba8.Forms
 
         private void radioButtonAllNotebooks_CheckedChanged(object sender, EventArgs e)
         {
+            checkBoxSelledProducts.Checked = false;
+
             listBox1.Items.Clear();
 
             button1.Visible = true;
@@ -97,6 +101,8 @@ namespace laba8.Forms
 
         private void radioButtonAllProducts_CheckedChanged(object sender, EventArgs e)
         {
+            checkBoxSelledProducts.Checked = false;
+
             listBox1.Items.Clear();
 
             button1.Visible = false;
@@ -115,23 +121,62 @@ namespace laba8.Forms
 
             if (radioButtonAllDesktops.Checked == true)
             {
-                foreach (var item in SortServices.SortDesktopByDate(collection))
+                if (checkBoxSelledProducts.Checked == true)
                 {
-                    listBox1.Items.Add(item);
+                    foreach (var item in SortServices.SortDesktopByDate(collection))
+                    {
+                        if (item.IsSell)
+                        {
+                            listBox1.Items.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in SortServices.SortDesktopByDate(collection))
+                    {
+                        listBox1.Items.Add(item);
+                    }
                 }
             }
             else if (radioButtonAllNotebooks.Checked == true)
             {
-                foreach (var item in SortServices.SortNotebookByDate(collection))
+                if (checkBoxSelledProducts.Checked == true)
                 {
-                    listBox1.Items.Add(item);
+                    foreach (var item in SortServices.SortNotebookByDate(collection))
+                    {
+                        if (item.IsSell)
+                        {
+                            listBox1.Items.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in SortServices.SortDesktopByDate(collection))
+                    {
+                        listBox1.Items.Add(item);
+                    }
                 }
             }
             else
             {
-                foreach (var item in SortServices.SortAllByDate(collection))
+                if (checkBoxSelledProducts.Checked == true)
                 {
-                    listBox1.Items.Add(item);
+                    foreach (var item in SortServices.SortAllByDate(collection))
+                    {
+                        if (item.IsSell)
+                        {
+                            listBox1.Items.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in SortServices.SortAllByDate(collection))
+                    {
+                        listBox1.Items.Add(item);
+                    }
                 }
             }
         }
@@ -142,23 +187,62 @@ namespace laba8.Forms
 
             if (radioButtonAllDesktops.Checked == true)
             {
-                foreach (var item in SortServices.SortDesktopByPrice())
+                if (checkBoxSelledProducts.Checked == true)
                 {
-                    listBox1.Items.Add(item.ToString());
+                    foreach (var item in SortServices.SortDesktopByPrice())
+                    {
+                        if (item.IsSell)
+                        {
+                            listBox1.Items.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in SortServices.SortDesktopByPrice())
+                    {
+                        listBox1.Items.Add(item);
+                    }
                 }
             }
             else if (radioButtonAllNotebooks.Checked == true)
             {
-                foreach (var item in SortServices.SortNotebookByPrice())
+                if (checkBoxSelledProducts.Checked == true)
                 {
-                    listBox1.Items.Add(item.ToString());
+                    foreach (var item in SortServices.SortNotebookByPrice())
+                    {
+                        if (item.IsSell)
+                        {
+                            listBox1.Items.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in SortServices.SortDesktopByPrice())
+                    {
+                        listBox1.Items.Add(item);
+                    }
                 }
             }
             else
             {
-                foreach (var item in SortServices.SortAllByPrice())
+                if (checkBoxSelledProducts.Checked == true)
                 {
-                    listBox1.Items.Add(item.ToString());
+                    foreach (var item in SortServices.SortAllByPrice())
+                    {
+                        if (item.IsSell)
+                        {
+                            listBox1.Items.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var item in SortServices.SortAllByPrice())
+                    {
+                        listBox1.Items.Add(item);
+                    }
                 }
             }
         }

@@ -42,7 +42,7 @@ namespace laba8.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MainForm mainForm = new MainForm();
+            MainForm mainForm = new MainForm(_administrator);
 
             mainForm.ShowDialog();
         }

@@ -1,6 +1,6 @@
-﻿namespace laba8
+﻿namespace laba8.Forms
 {
-    partial class NotebookForm
+    partial class NotebookFormChange
     {
         /// <summary>
         /// Required designer variable.
@@ -47,11 +47,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.buttonChangeData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxCPU
             // 
             this.comboBoxCPU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCPU.Enabled = false;
             this.comboBoxCPU.FormattingEnabled = true;
             this.comboBoxCPU.Items.AddRange(new object[] {
             "Intel",
@@ -64,6 +66,7 @@
             // comboBoxGPU
             // 
             this.comboBoxGPU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGPU.Enabled = false;
             this.comboBoxGPU.FormattingEnabled = true;
             this.comboBoxGPU.Items.AddRange(new object[] {
             "nvidia",
@@ -76,6 +79,7 @@
             // comboBoxBattery
             // 
             this.comboBoxBattery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBattery.Enabled = false;
             this.comboBoxBattery.FormattingEnabled = true;
             this.comboBoxBattery.Items.AddRange(new object[] {
             "LiPoly ",
@@ -126,6 +130,7 @@
             // 
             this.textBoxQuantityRAM.Location = new System.Drawing.Point(199, 192);
             this.textBoxQuantityRAM.Name = "textBoxQuantityRAM";
+            this.textBoxQuantityRAM.ReadOnly = true;
             this.textBoxQuantityRAM.Size = new System.Drawing.Size(121, 20);
             this.textBoxQuantityRAM.TabIndex = 7;
             // 
@@ -142,6 +147,7 @@
             // 
             this.textBoxWorkHours.Location = new System.Drawing.Point(199, 233);
             this.textBoxWorkHours.Name = "textBoxWorkHours";
+            this.textBoxWorkHours.ReadOnly = true;
             this.textBoxWorkHours.Size = new System.Drawing.Size(121, 20);
             this.textBoxWorkHours.TabIndex = 9;
             // 
@@ -175,6 +181,7 @@
             // comboBoxNumberOfCores
             // 
             this.comboBoxNumberOfCores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNumberOfCores.Enabled = false;
             this.comboBoxNumberOfCores.FormattingEnabled = true;
             this.comboBoxNumberOfCores.Items.AddRange(new object[] {
             "2",
@@ -188,7 +195,7 @@
             // 
             // buttonSetData
             // 
-            this.buttonSetData.Location = new System.Drawing.Point(219, 352);
+            this.buttonSetData.Location = new System.Drawing.Point(362, 352);
             this.buttonSetData.Name = "buttonSetData";
             this.buttonSetData.Size = new System.Drawing.Size(81, 23);
             this.buttonSetData.TabIndex = 14;
@@ -218,21 +225,34 @@
             // 
             this.textBoxPrice.Location = new System.Drawing.Point(199, 317);
             this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.ReadOnly = true;
             this.textBoxPrice.Size = new System.Drawing.Size(121, 20);
             this.textBoxPrice.TabIndex = 18;
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(199, 278);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 19;
             // 
-            // NotebookForm
+            // buttonChangeData
+            // 
+            this.buttonChangeData.Location = new System.Drawing.Point(12, 352);
+            this.buttonChangeData.Name = "buttonChangeData";
+            this.buttonChangeData.Size = new System.Drawing.Size(75, 23);
+            this.buttonChangeData.TabIndex = 20;
+            this.buttonChangeData.Text = "Изменить";
+            this.buttonChangeData.UseVisualStyleBackColor = true;
+            this.buttonChangeData.Click += new System.EventHandler(this.buttonChangeData_Click);
+            // 
+            // NotebookFormChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 387);
+            this.Controls.Add(this.buttonChangeData);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.label3);
@@ -252,7 +272,7 @@
             this.Controls.Add(this.comboBoxBattery);
             this.Controls.Add(this.comboBoxGPU);
             this.Controls.Add(this.comboBoxCPU);
-            this.Name = "NotebookForm";
+            this.Name = "NotebookFormChange";
             this.Text = "Ноутбук";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -280,5 +300,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button buttonChangeData;
     }
 }

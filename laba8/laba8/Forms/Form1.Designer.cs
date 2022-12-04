@@ -33,11 +33,9 @@
             this.radioButtonDesktop = new System.Windows.Forms.RadioButton();
             this.radioButtonNotebook = new System.Windows.Forms.RadioButton();
             this.buttonEnterData = new System.Windows.Forms.Button();
-            this.buttonShortData = new System.Windows.Forms.Button();
             this.buttonShowData = new System.Windows.Forms.Button();
             this.buttonChangeYear = new System.Windows.Forms.Button();
             this.buttonCopy = new System.Windows.Forms.Button();
-            this.buttonSale = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,8 +44,9 @@
             this.listBoxComputer.FormattingEnabled = true;
             this.listBoxComputer.Location = new System.Drawing.Point(251, 25);
             this.listBoxComputer.Name = "listBoxComputer";
-            this.listBoxComputer.Size = new System.Drawing.Size(383, 186);
+            this.listBoxComputer.Size = new System.Drawing.Size(764, 173);
             this.listBoxComputer.TabIndex = 0;
+            this.listBoxComputer.SelectedIndexChanged += new System.EventHandler(this.listBoxComputer_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -92,19 +91,9 @@
             this.buttonEnterData.UseVisualStyleBackColor = true;
             this.buttonEnterData.Click += new System.EventHandler(this.buttonEnterData_Click);
             // 
-            // buttonShortData
-            // 
-            this.buttonShortData.Location = new System.Drawing.Point(363, 218);
-            this.buttonShortData.Name = "buttonShortData";
-            this.buttonShortData.Size = new System.Drawing.Size(125, 23);
-            this.buttonShortData.TabIndex = 3;
-            this.buttonShortData.Text = "Краткие сведения";
-            this.buttonShortData.UseVisualStyleBackColor = true;
-            this.buttonShortData.Click += new System.EventHandler(this.buttonShortData_Click);
-            // 
             // buttonShowData
             // 
-            this.buttonShowData.Location = new System.Drawing.Point(363, 247);
+            this.buttonShowData.Location = new System.Drawing.Point(375, 220);
             this.buttonShowData.Name = "buttonShowData";
             this.buttonShowData.Size = new System.Drawing.Size(125, 23);
             this.buttonShowData.TabIndex = 4;
@@ -114,7 +103,7 @@
             // 
             // buttonChangeYear
             // 
-            this.buttonChangeYear.Location = new System.Drawing.Point(363, 276);
+            this.buttonChangeYear.Location = new System.Drawing.Point(619, 220);
             this.buttonChangeYear.Name = "buttonChangeYear";
             this.buttonChangeYear.Size = new System.Drawing.Size(125, 25);
             this.buttonChangeYear.TabIndex = 5;
@@ -124,7 +113,7 @@
             // 
             // buttonCopy
             // 
-            this.buttonCopy.Location = new System.Drawing.Point(363, 308);
+            this.buttonCopy.Location = new System.Drawing.Point(890, 221);
             this.buttonCopy.Name = "buttonCopy";
             this.buttonCopy.Size = new System.Drawing.Size(125, 23);
             this.buttonCopy.TabIndex = 6;
@@ -132,26 +121,14 @@
             this.buttonCopy.UseVisualStyleBackColor = true;
             this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
             // 
-            // buttonSale
-            // 
-            this.buttonSale.Location = new System.Drawing.Point(363, 337);
-            this.buttonSale.Name = "buttonSale";
-            this.buttonSale.Size = new System.Drawing.Size(125, 23);
-            this.buttonSale.TabIndex = 7;
-            this.buttonSale.Text = "Продать";
-            this.buttonSale.UseVisualStyleBackColor = true;
-            this.buttonSale.Click += new System.EventHandler(this.buttonSale_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 369);
-            this.Controls.Add(this.buttonSale);
+            this.ClientSize = new System.Drawing.Size(1027, 265);
             this.Controls.Add(this.buttonCopy);
             this.Controls.Add(this.buttonChangeYear);
             this.Controls.Add(this.buttonShowData);
-            this.Controls.Add(this.buttonShortData);
             this.Controls.Add(this.buttonEnterData);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBoxComputer);
@@ -170,11 +147,9 @@
         private System.Windows.Forms.Button buttonEnterData;
         private System.Windows.Forms.RadioButton radioButtonDesktop;
         private System.Windows.Forms.RadioButton radioButtonNotebook;
-        private System.Windows.Forms.Button buttonShortData;
         private System.Windows.Forms.Button buttonShowData;
         private System.Windows.Forms.Button buttonChangeYear;
         private System.Windows.Forms.Button buttonCopy;
-        private System.Windows.Forms.Button buttonSale;
     }
 }
 

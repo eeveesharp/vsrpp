@@ -1,4 +1,7 @@
-﻿using System;
+﻿using laba8.Forms;
+using laba8.Models;
+using laba8.Storage;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +15,20 @@ namespace laba8
 {
     public partial class MainForm : Form
     {
-        List<Computer> computers = new List<Computer>();      
+        private readonly Administrator _administrator;
 
-        public MainForm()
+        public MainForm(Administrator administrator)
         {
             InitializeComponent();
+
+            _administrator = administrator;
+
+            listBoxComputer.Items.Clear();
+
+            for (int i = 0; i < ComputerStorage.ComputersList.Count; i++)
+            {
+                listBoxComputer.Items.Add(ComputerStorage.ComputersList[i]);
+            }
         }
 
         private void buttonEnterData_Click(object sender, EventArgs e)
@@ -29,27 +41,24 @@ namespace laba8
             {
                 NotebookForm notebookForm = new NotebookForm(notebook);               
 
-                notebookForm.Show();
+                notebookForm.ShowDialog();
                 
-                computers.Add(notebook);             
+                ComputerStorage.ComputersList.Add(notebook);             
             }
             else if (radioButtonDesktop.Checked == true)
             {
                 DesktopForm desktopForm = new DesktopForm(desktop);
 
-                desktopForm.Show();
+                desktopForm.ShowDialog();
 
-                computers.Add(desktop);                
-            }          
-        }
+                ComputerStorage.ComputersList.Add(desktop);                
+            }
 
-        private void buttonShortData_Click(object sender, EventArgs e)
-        {
             listBoxComputer.Items.Clear();
 
-            for (int i = 0; i < computers.Count; i++)
+            for (int i = 0; i < ComputerStorage.ComputersList.Count; i++)
             {
-                listBoxComputer.Items.Add(computers[i]);
+                listBoxComputer.Items.Add(ComputerStorage.ComputersList[i]);
             }
         }
 
@@ -65,17 +74,6 @@ namespace laba8
             {
                 MessageBox.Show(selectedComputer.Show());
             }
-
-            ComputerCollection strings = new ComputerCollection(computers);
-
-            StringBuilder stringBuilder = new StringBuilder();
-
-            foreach (var item in strings)
-            {
-                stringBuilder.Append(item);
-                stringBuilder.Append(" ");
-            }
-            MessageBox.Show(stringBuilder.ToString());
         }
 
         private void buttonChangeYear_Click(object sender, EventArgs e)
@@ -93,14 +91,39 @@ namespace laba8
 
             var comp = new Desktop((Desktop)selectedComputer);
 
-            computers.Add(comp);
+            ComputerStorage.ComputersList.Add(comp);
         }
 
-        private void buttonSale_Click(object sender, EventArgs e)
+        private void listBoxComputer_SelectedIndexChanged(object sender, EventArgs e)
         {
             Computer selectedComputer = (Computer)listBoxComputer.SelectedItem;
 
-            computers.Remove(selectedComputer);
+            if (selectedComputer is Desktop)
+            {
+                DesktopFormChange desktopFormChange = new DesktopFormChange(_administrator, (Desktop)selectedComputer);
+
+                desktopFormChange.ShowDialog();
+
+                listBoxComputer.Items.Clear();
+
+                for (int i = 0; i < ComputerStorage.ComputersList.Count; i++)
+                {
+                    listBoxComputer.Items.Add(ComputerStorage.ComputersList[i]);
+                }
+            }
+            else if (selectedComputer is Notebook)
+            {
+                NotebookFormChange notebookFormChange = new NotebookFormChange(_administrator, (Notebook)selectedComputer);
+
+                notebookFormChange.ShowDialog();
+
+                listBoxComputer.Items.Clear();
+
+                for (int i = 0; i < ComputerStorage.ComputersList.Count; i++)
+                {
+                    listBoxComputer.Items.Add(ComputerStorage.ComputersList[i]);
+                }
+            }
         }
     }
 }

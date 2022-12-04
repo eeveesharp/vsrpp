@@ -38,6 +38,10 @@ namespace laba8
                 Notebook.WorkHours = numberWorkHours;
 
                 Notebook.TypeBattery = comboBoxBattery.Text;
+
+                Notebook.SetDate = DateTime.Parse(dateTimePicker1.Text);
+
+                Notebook.PriceWithoutNds = int.Parse(textBoxPrice.Text);
             }
             else
             {

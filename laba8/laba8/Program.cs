@@ -22,9 +22,9 @@ namespace laba8
 
             //AdministratorStorage.AdministratorsList = new List<Administrator>()
             //{
-            //    new Administrator(){ SecondName = "Ivanov", Password = "12345678", Age = 18, Role = 1 },
-            //    new Administrator(){ SecondName = "Ivanov1", Password = "qwerty", Age = 35, Role = 2 },
-            //    new Administrator(){ SecondName = "Ivanov2", Password = "asdfgh", Age = 54, Role = 3 }
+            //    new Administrator(){ SecondName = "Chief", Password = "12345678", Age = 18, Role = "Chief" },
+            //    new Administrator(){ SecondName = "Accountant", Password = "qwerty", Age = 35, Role = "Accountant" },
+            //    new Administrator(){ SecondName = "SalesDepartment", Password = "asdfgh", Age = 54, Role = "SalesDepartment" }
             //};
 
             ComputerStorage.ComputersList = new List<Computer>()

@@ -1,6 +1,6 @@
-﻿namespace laba8
+﻿namespace laba8.Forms
 {
-    partial class DesktopForm
+    partial class DesktopFormChange
     {
         /// <summary>
         /// Required designer variable.
@@ -47,11 +47,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonChangeData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSetData
             // 
-            this.buttonSetData.Location = new System.Drawing.Point(302, 384);
+            this.buttonSetData.Location = new System.Drawing.Point(434, 384);
             this.buttonSetData.Name = "buttonSetData";
             this.buttonSetData.Size = new System.Drawing.Size(85, 23);
             this.buttonSetData.TabIndex = 29;
@@ -62,6 +63,7 @@
             // comboBoxNumberOfCores
             // 
             this.comboBoxNumberOfCores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNumberOfCores.Enabled = false;
             this.comboBoxNumberOfCores.FormattingEnabled = true;
             this.comboBoxNumberOfCores.Items.AddRange(new object[] {
             "2",
@@ -104,6 +106,7 @@
             // 
             this.textBoxQuantityRAM.Location = new System.Drawing.Point(286, 212);
             this.textBoxQuantityRAM.Name = "textBoxQuantityRAM";
+            this.textBoxQuantityRAM.ReadOnly = true;
             this.textBoxQuantityRAM.Size = new System.Drawing.Size(121, 20);
             this.textBoxQuantityRAM.TabIndex = 22;
             // 
@@ -146,6 +149,7 @@
             // comboBoxGPU
             // 
             this.comboBoxGPU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGPU.Enabled = false;
             this.comboBoxGPU.FormattingEnabled = true;
             this.comboBoxGPU.Items.AddRange(new object[] {
             "nvidia",
@@ -158,6 +162,7 @@
             // comboBoxCPU
             // 
             this.comboBoxCPU.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCPU.Enabled = false;
             this.comboBoxCPU.FormattingEnabled = true;
             this.comboBoxCPU.Items.AddRange(new object[] {
             "Intel",
@@ -192,6 +197,7 @@
             // 
             this.textBoxBP.Location = new System.Drawing.Point(286, 169);
             this.textBoxBP.Name = "textBoxBP";
+            this.textBoxBP.ReadOnly = true;
             this.textBoxBP.Size = new System.Drawing.Size(121, 20);
             this.textBoxBP.TabIndex = 31;
             // 
@@ -206,6 +212,7 @@
             // 
             // datePickerForDesk
             // 
+            this.datePickerForDesk.Enabled = false;
             this.datePickerForDesk.Location = new System.Drawing.Point(286, 299);
             this.datePickerForDesk.Name = "datePickerForDesk";
             this.datePickerForDesk.Size = new System.Drawing.Size(200, 20);
@@ -224,6 +231,7 @@
             // 
             this.textBoxPrice.Location = new System.Drawing.Point(286, 336);
             this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.ReadOnly = true;
             this.textBoxPrice.Size = new System.Drawing.Size(121, 20);
             this.textBoxPrice.TabIndex = 35;
             // 
@@ -236,11 +244,22 @@
             this.label4.TabIndex = 36;
             this.label4.Text = "Цена";
             // 
-            // DesktopForm
+            // buttonChangeData
+            // 
+            this.buttonChangeData.Location = new System.Drawing.Point(23, 384);
+            this.buttonChangeData.Name = "buttonChangeData";
+            this.buttonChangeData.Size = new System.Drawing.Size(75, 23);
+            this.buttonChangeData.TabIndex = 37;
+            this.buttonChangeData.Text = "Изменить";
+            this.buttonChangeData.UseVisualStyleBackColor = true;
+            this.buttonChangeData.Click += new System.EventHandler(this.buttonChangeData_Click);
+            // 
+            // DesktopFormChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(546, 419);
+            this.Controls.Add(this.buttonChangeData);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.label3);
@@ -260,7 +279,7 @@
             this.Controls.Add(this.labelCPU);
             this.Controls.Add(this.comboBoxGPU);
             this.Controls.Add(this.comboBoxCPU);
-            this.Name = "DesktopForm";
+            this.Name = "DesktopFormChange";
             this.Text = "DesktopForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -288,5 +307,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label label4;
-    }
+        private System.Windows.Forms.Button buttonChangeData;
+    }   
 }
