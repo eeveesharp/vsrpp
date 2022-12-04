@@ -98,6 +98,8 @@
     <Compile Include="Forms\ProductsForm.Designer.cs">
       <DependentUpon>ProductsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Journal.cs" />
+    <Compile Include="Listener.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Collections\ComputerCollection.cs" />
