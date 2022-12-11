@@ -11,17 +11,7 @@ namespace laba8.Services
     {
         public static Computer[] SortNotebookByDate(ComputerCollection collection)
         {
-            List<Computer> result = new List<Computer>();
-
-            foreach (var item in ComputerStorage.ComputersList)
-            {
-                if (item is Notebook)
-                {
-                    result.Add(item);
-                }
-            }
-
-            var arrResult = result.ToArray();
+            var arrResult = ComputerStorage.ComputersList.Where(x => x is Notebook).ToArray();
 
             Array.Sort(arrResult, collection);
 
@@ -30,17 +20,7 @@ namespace laba8.Services
 
         public static Computer[] SortDesktopByDate(ComputerCollection collection)
         {
-            List<Computer> result = new List<Computer>();
-
-            foreach (var item in ComputerStorage.ComputersList)
-            {
-                if (item is Desktop)
-                {
-                    result.Add(item);
-                }
-            }
-
-            var arrResult = result.ToArray();
+            var arrResult = ComputerStorage.ComputersList.Where(x => x is Desktop).ToArray();
 
             Array.Sort(arrResult, collection);
 
@@ -67,15 +47,7 @@ namespace laba8.Services
 
         public static List<Computer> SortDesktopByPrice()
         {
-            List<Computer> result = new List<Computer>();
-
-            foreach (var item in ComputerStorage.ComputersList)
-            {
-                if (item is Desktop)
-                {
-                    result.Add(item);
-                }
-            }
+            var result = ComputerStorage.ComputersList.Where(x => x is Desktop).ToList();
 
             result.Sort();
 
@@ -84,15 +56,7 @@ namespace laba8.Services
 
         public static List<Computer> SortNotebookByPrice()
         {
-            List<Computer> result = new List<Computer>();
-
-            foreach (var item in ComputerStorage.ComputersList)
-            {
-                if (item is Notebook)
-                {
-                    result.Add(item);
-                }
-            }
+            var result = ComputerStorage.ComputersList.Where(x => x is Notebook).ToList();
 
             result.Sort();
 
@@ -101,17 +65,7 @@ namespace laba8.Services
 
         public static Computer[] SortNotebookByWorkHours(NotebookCollection collection)
         {
-            List<Notebook> result = new List<Notebook>();
-
-            foreach (var item in ComputerStorage.ComputersList)
-            {
-                if (item is Notebook)
-                {
-                    result.Add((Notebook)item);
-                }
-            }
-
-            var arrResult = result.ToArray();
+            var arrResult = ComputerStorage.ComputersList.OfType<Notebook>().ToArray();
 
             Array.Sort(arrResult, collection);
 
@@ -120,17 +74,7 @@ namespace laba8.Services
 
         public static Computer[] SortDesktopByBlockPower(DesktopCollection collection)
         {
-            List<Desktop> result = new List<Desktop>();
-
-            foreach (var item in ComputerStorage.ComputersList)
-            {
-                if (item is Desktop)
-                {
-                    result.Add((Desktop)item);
-                }
-            }
-
-            var arrResult = result.ToArray();
+            var arrResult = ComputerStorage.ComputersList.OfType<Desktop>().ToArray();
 
             Array.Sort(arrResult, collection);
 

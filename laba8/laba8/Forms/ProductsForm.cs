@@ -123,12 +123,9 @@ namespace laba8.Forms
             {
                 if (checkBoxSelledProducts.Checked == true)
                 {
-                    foreach (var item in SortServices.SortDesktopByDate(collection))
+                    foreach (var item in SortServices.SortDesktopByDate(collection).Where(x => x.IsSell == true).ToList())
                     {
-                        if (item.IsSell)
-                        {
-                            listBox1.Items.Add(item);
-                        }
+                        listBox1.Items.Add(item);
                     }
                 }
                 else
@@ -143,17 +140,14 @@ namespace laba8.Forms
             {
                 if (checkBoxSelledProducts.Checked == true)
                 {
-                    foreach (var item in SortServices.SortNotebookByDate(collection))
+                    foreach (var item in SortServices.SortNotebookByDate(collection).Where(x => x.IsSell == true).ToList())
                     {
-                        if (item.IsSell)
-                        {
-                            listBox1.Items.Add(item);
-                        }
+                        listBox1.Items.Add(item);
                     }
                 }
                 else
                 {
-                    foreach (var item in SortServices.SortDesktopByDate(collection))
+                    foreach (var item in SortServices.SortNotebookByDate(collection))
                     {
                         listBox1.Items.Add(item);
                     }
@@ -163,12 +157,9 @@ namespace laba8.Forms
             {
                 if (checkBoxSelledProducts.Checked == true)
                 {
-                    foreach (var item in SortServices.SortAllByDate(collection))
+                    foreach (var item in SortServices.SortAllByDate(collection).Where(x => x.IsSell == true).ToList())
                     {
-                        if (item.IsSell)
-                        {
-                            listBox1.Items.Add(item);
-                        }
+                        listBox1.Items.Add(item);
                     }
                 }
                 else
@@ -189,12 +180,9 @@ namespace laba8.Forms
             {
                 if (checkBoxSelledProducts.Checked == true)
                 {
-                    foreach (var item in SortServices.SortDesktopByPrice())
+                    foreach (var item in SortServices.SortDesktopByPrice().Where(x => x.IsSell == true).ToList())
                     {
-                        if (item.IsSell)
-                        {
-                            listBox1.Items.Add(item);
-                        }
+                        listBox1.Items.Add(item);
                     }
                 }
                 else
@@ -209,17 +197,14 @@ namespace laba8.Forms
             {
                 if (checkBoxSelledProducts.Checked == true)
                 {
-                    foreach (var item in SortServices.SortNotebookByPrice())
+                    foreach (var item in SortServices.SortNotebookByPrice().Where(x => x.IsSell == true).ToList())
                     {
-                        if (item.IsSell)
-                        {
-                            listBox1.Items.Add(item);
-                        }
+                        listBox1.Items.Add(item);
                     }
                 }
                 else
                 {
-                    foreach (var item in SortServices.SortDesktopByPrice())
+                    foreach (var item in SortServices.SortNotebookByPrice())
                     {
                         listBox1.Items.Add(item);
                     }
@@ -229,12 +214,9 @@ namespace laba8.Forms
             {
                 if (checkBoxSelledProducts.Checked == true)
                 {
-                    foreach (var item in SortServices.SortAllByPrice())
+                    foreach (var item in SortServices.SortAllByPrice().Where(x => x.IsSell == true).ToList())
                     {
-                        if (item.IsSell)
-                        {
-                            listBox1.Items.Add(item);
-                        }
+                        listBox1.Items.Add(item);
                     }
                 }
                 else
@@ -307,32 +289,23 @@ namespace laba8.Forms
 
             if (radioButtonAllDesktops.Checked == true)
             {
-                foreach (var item in GetListDesktop())
+                foreach (var item in GetListDesktop().Where(x => x.Year == int.Parse(textBoxFind.Text)))
                 {
-                    if (item.Year == int.Parse(textBoxFind.Text))
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
             else if (radioButtonAllNotebooks.Checked == true)
             {
-                foreach (var item in GetListNotebook())
+                foreach (var item in GetListNotebook().Where(x => x.Year == int.Parse(textBoxFind.Text)))
                 {
-                    if (item.Year == int.Parse(textBoxFind.Text))
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
             else
             {
-                foreach (var item in ComputerStorage.ComputersList)
+                foreach (var item in ComputerStorage.ComputersList.Where(x => x.Year == int.Parse(textBoxFind.Text)))
                 {
-                    if (item.Year == int.Parse(textBoxFind.Text))
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
         }
@@ -343,32 +316,23 @@ namespace laba8.Forms
 
             if (radioButtonAllDesktops.Checked == true)
             {
-                foreach (var item in GetListDesktop())
+                foreach (var item in GetListDesktop().Where(x => x.PriceWithoutNds == decimal.Parse(textBoxFind.Text)))
                 {
-                    if (item.PriceWithoutNds == decimal.Parse(textBoxFind.Text))
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
             else if (radioButtonAllNotebooks.Checked == true)
             {
-                foreach (var item in GetListNotebook())
+                foreach (var item in GetListNotebook().Where(x => x.PriceWithoutNds == decimal.Parse(textBoxFind.Text)))
                 {
-                    if (item.PriceWithoutNds == decimal.Parse(textBoxFind.Text))
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
             else
             {
-                foreach (var item in ComputerStorage.ComputersList)
+                foreach (var item in ComputerStorage.ComputersList.Where(x => x.PriceWithoutNds == decimal.Parse(textBoxFind.Text)))
                 {
-                    if (item.PriceWithoutNds == decimal.Parse(textBoxFind.Text))
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
         }
@@ -379,32 +343,23 @@ namespace laba8.Forms
 
             if (radioButtonAllDesktops.Checked == true)
             {
-                foreach (var item in GetListDesktop())
+                foreach (var item in GetListDesktop().Where(x => x.CPU == textBoxFind.Text))
                 {
-                    if (item.CPU == textBoxFind.Text)
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
             else if (radioButtonAllNotebooks.Checked == true)
             {
-                foreach (var item in GetListNotebook())
+                foreach (var item in GetListNotebook().Where(x => x.CPU == textBoxFind.Text))
                 {
-                    if (item.CPU == textBoxFind.Text)
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
             else
             {
-                foreach (var item in ComputerStorage.ComputersList)
+                foreach (var item in ComputerStorage.ComputersList.Where(x => x.CPU == textBoxFind.Text))
                 {
-                    if (item.CPU == textBoxFind.Text)
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
         }
@@ -415,32 +370,23 @@ namespace laba8.Forms
 
             if (radioButtonAllDesktops.Checked == true)
             {
-                foreach (var item in GetListDesktop())
+                foreach (var item in GetListDesktop().Where(x => x.NumberOfRAM == int.Parse(textBoxFind.Text)))
                 {
-                    if (item.NumberOfRAM == int.Parse(textBoxFind.Text))
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
             else if (radioButtonAllNotebooks.Checked == true)
             {
-                foreach (var item in GetListNotebook())
+                foreach (var item in GetListNotebook().Where(x => x.NumberOfRAM == int.Parse(textBoxFind.Text)))
                 {
-                    if (item.NumberOfRAM == int.Parse(textBoxFind.Text))
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
             else
             {
-                foreach (var item in ComputerStorage.ComputersList)
+                foreach (var item in ComputerStorage.ComputersList.Where(x => x.NumberOfRAM == int.Parse(textBoxFind.Text)))
                 {
-                    if (item.NumberOfRAM == int.Parse(textBoxFind.Text))
-                    {
-                        listBox1.Items.Add(item);
-                    }
+                    listBox1.Items.Add(item);
                 }
             }
         }
@@ -453,12 +399,9 @@ namespace laba8.Forms
             {
                 if (checkBoxSelledProducts.Checked == true)
                 {
-                    foreach (var item in GetListDesktop())
+                    foreach (var item in GetListDesktop().Where(x => x.IsSell == true))
                     {
-                        if (item.IsSell == true)
-                        {
-                            listBox1.Items.Add(item);
-                        }
+                        listBox1.Items.Add(item);
                     }
                 }
                 else
@@ -473,12 +416,9 @@ namespace laba8.Forms
             {
                 if (checkBoxSelledProducts.Checked == true)
                 {
-                    foreach (var item in GetListNotebook())
+                    foreach (var item in GetListNotebook().Where(x => x.IsSell == true))
                     {
-                        if (item.IsSell == true)
-                        {
-                            listBox1.Items.Add(item);
-                        }
+                        listBox1.Items.Add(item);
                     }
                 }
                 else
@@ -493,12 +433,9 @@ namespace laba8.Forms
             {
                 if (checkBoxSelledProducts.Checked == true)
                 {
-                    foreach (var item in ComputerStorage.ComputersList)
+                    foreach (var item in ComputerStorage.ComputersList.Where(x => x.IsSell == true))
                     {
-                        if (item.IsSell == true)
-                        {
-                            listBox1.Items.Add(item);
-                        }
+                        listBox1.Items.Add(item);
                     }
                 }
                 else
