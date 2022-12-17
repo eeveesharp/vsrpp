@@ -1,0 +1,65 @@
+﻿<Window x:Class="_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    
+        <!--<Canvas>
+            <Label Content="Регистрация пользователя" Canvas.Left="15" Canvas.Top="15"/>
+            <Label Content="ФИО" Canvas.Left="15" Canvas.Top="45"/>
+            <Label Content="Email" Canvas.Left="15" Canvas.Top="75"/>
+            <Button Content="Зарегистрироваться" Canvas.Left="60" Canvas.Top="110"/>
+            <TextBox Canvas.Left="70" Canvas.Top="50" Width="120"/>
+            <TextBox Canvas.Left="70" Canvas.Top="80" Width="120"/>
+        </Canvas>-->
+
+        <!--<WrapPanel>
+            <Label Content="Регистрация пользователя"/>
+            <Label Content="ФИО"/>
+            <TextBox Canvas.Left="70" Width="150"/>
+            <Label Content="Email"/>
+            <TextBox Canvas.Left="70" Width="150"/>
+            <Button Content="Зарегистрироваться"/>
+        </WrapPanel>-->
+
+        <!--<StackPanel HorizontalAlignment="Center">
+            <Label Content="Регистрация пользователя"/>
+            <Label Content="ФИО"/>
+            <TextBox Canvas.Left="70" Width="150"/>
+            <Label Content="Email"/>
+            <TextBox Width="150"/>
+            <Button Content="Зарегистрироваться" Margin="10"/>
+        </StackPanel>-->
+
+        <!--<DockPanel LastChildFill="False">
+            <Label DockPanel.Dock="Top" Content="Регистрация пользователя"/>
+            <Label DockPanel.Dock="Left" Content="ФИО"/>
+            <TextBox Canvas.Left="70" Width="150"/>
+            <Label DockPanel.Dock="Right" Content="Email"/>
+            <TextBox DockPanel.Dock="Right" Width="150"/>
+            <Button DockPanel.Dock="Bottom" Content="Зарегистрироваться" Margin="10"/>
+        </DockPanel>-->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Регистрация пользователя" />
+        <Label Grid.Row="1" Grid.Column="0" Content="ФИО" />
+        <TextBox Grid.Row="1" Grid.Column="1" Width="150" />
+        <Label Grid.Row="2" Grid.Column="0" Content="Email" />
+        <TextBox Grid.Row="2" Grid.Column="1" Width="150" />
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Зарегистрироваться" />
+    </Grid>
+    
+</Window>
