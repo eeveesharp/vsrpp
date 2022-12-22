@@ -11,7 +11,11 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <WrapPanel Grid.Column="0" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="0.3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Column="0" Grid.Row="1" Background="White" HorizontalAlignment="Left">
             <Button Background="Yellow" Width="50" Height="50" Content="A" Margin="10"/>
             <Button Background="Red" Width="50" Height="50" Content="B" Margin="10"/>
             <Button Background="Green" Width="50" Height="50" Content="C" Margin="10"/>
@@ -19,7 +23,7 @@
             <Button Background="DarkGray" Width="50" Height="50" Content="E" Margin="10"/>
             <Button Background="LightGray" Width="50" Height="50" Content="F" Margin="10"/>
         </WrapPanel>
-        <WrapPanel Grid.Column="1"  Background="White">
+        <WrapPanel Grid.Column="1" Grid.Row="0"  Background="White" Grid.RowSpan="2">
             <Button Background="Yellow" Width="50" Height="50" Content="A" Margin="10"/>
             <Button Background="Red" Width="50" Height="50" Content="B" Margin="10"/>
             <Button Background="Green" Width="50" Height="50" Content="C" Margin="10"/>
