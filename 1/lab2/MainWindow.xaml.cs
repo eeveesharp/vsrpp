@@ -39,7 +39,7 @@ namespace lab2
             animation.SpeedRatio = 0.5;
 
             btn.BeginAnimation(WidthProperty, animation);
-            btn.BeginAnimation(HeightProperty, animation);          
+            btn.BeginAnimation(HeightProperty, animation);
         }
 
         private void btn_MouseLeave(object sender, MouseEventArgs e)

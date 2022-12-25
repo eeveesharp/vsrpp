@@ -1,0 +1,15 @@
+﻿<Window x:Class="_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Canvas x:Name="Grd">
+        <Button x:Name="btn1" Content="Button1" HorizontalAlignment="Left" Width="150" Height="30" VerticalAlignment="Top" Click="btn1_Click" />
+        <Button x:Name="btn2" Content="Button2" HorizontalAlignment="Right"  Width="150" Height="30" VerticalAlignment="Bottom" Click="btn2_Click" Margin="150 0 0 0" IsEnabled="False"/>
+        <Label Name="text" Content="Какой-то текст" Visibility="Hidden"></Label>
+    </Canvas>
+
+</Window>
