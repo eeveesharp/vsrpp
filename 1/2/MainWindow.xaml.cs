@@ -23,31 +23,59 @@ namespace _2
     {
         private Random random = new Random();
 
+        private int Y => random.Next(30, (int)Height - 25);
+
+        private int X => random.Next(0, (int)Width - 100);
+
+        private int x;
+
+        private int y;
+
+        private  int Side;
+
+        private TranslateTransform tr;
+
+        DoubleAnimation animX = new DoubleAnimation();
+
+        DoubleAnimation animY = new DoubleAnimation();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            animX.Completed += AnimX_Completed;
+            animY.Completed += AnimX_Completed;
+        }
+
+        private void AnimX_Completed(object sender, EventArgs e)
+        {
+            MessageBox.Show("dff");
+            btn1.IsEnabled = true;
+            btn2.IsEnabled = false;
         }
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            var a = random.Next(1, 5);           
+            Side = random.Next(1, 5);
+            text.Visibility = Visibility.Visible;
+            AnimationFromLeft();
 
-            if (a == 1)
-            {
-                AnimationFromLeft();
-            }
-            else if (a == 2)
-            {
-                AnimationFromRight();
-            }
-            else if (a == 3)
-            {
-                AnimationFromTop();
-            }
-            else if (a == 4)
-            {
-                AnimationFromBot();
-            }
+            //if (Side == 1)
+            //{
+            //    AnimationFromLeft();
+            //}
+            //else if (Side == 2)
+            //{
+            //    AnimationFromRight();
+            //}
+            //else if (Side == 3)
+            //{
+            //    AnimationFromTop();
+            //}
+            //else if (Side == 4)
+            //{
+            //    AnimationFromBot();
+            //}
 
             btn1.IsEnabled = false;
             btn2.IsEnabled = true;
@@ -55,63 +83,130 @@ namespace _2
 
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
-            btn1.IsEnabled = true;
-            btn2.IsEnabled = false;
-        }
+            AnimationFromLeftBack();
+
+            //if (Side == 1)
+            //{
+            //    AnimationFromLeftBack();
+            //}
+            //else if (Side == 2)
+            //{
+            //    AnimationFromRightBack();
+            //}
+            //else if (Side == 3)
+            //{
+            //    AnimationFromTopBack();
+            //}
+            //else if (Side == 4)
+            //{
+            //    AnimationFromBotBack();
+            //}
+        }      
 
         private void AnimationFromLeft()
+        {          
+            var transform = new TranslateTransform();
+            text.RenderTransform = transform;
+            tr = transform;
+
+            y = Y;
+
+            /*DoubleAnimation*/ animX = new DoubleAnimation(-100, Width, TimeSpan.FromSeconds(5));
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+
+            /*DoubleAnimation*/ animY = new DoubleAnimation(y, y, TimeSpan.FromSeconds(5));
+            transform.BeginAnimation(TranslateTransform.YProperty, animY);
+        }
+
+        private void AnimationFromLeftBack()
         {
-            var a = random.Next(4, 10);
-            text.Visibility = Visibility.Visible;
             var transform = new TranslateTransform();
             text.RenderTransform = transform;
 
-            DoubleAnimation animX = new DoubleAnimation(-400, Width, TimeSpan.FromSeconds(1));
+            DoubleAnimation animX = new DoubleAnimation(tr.X, -100, TimeSpan.FromSeconds(3));
+            DoubleAnimation animY = new DoubleAnimation(y, y, TimeSpan.FromSeconds(3));
             transform.BeginAnimation(TranslateTransform.XProperty, animX);
-
-            DoubleAnimation animY = new DoubleAnimation(Height / a, Height / a, TimeSpan.FromSeconds(1));
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
 
         private void AnimationFromRight()
         {
-            var a = random.Next(1, 6);
-            text.Visibility = Visibility.Visible;
+            var transform = new TranslateTransform();
+            text.RenderTransform = transform;
+            tr = transform;
+
+            y = Y;
+
+            DoubleAnimation animX = new DoubleAnimation(Width, -100, TimeSpan.FromSeconds(5));
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+
+            DoubleAnimation animY = new DoubleAnimation(y, y, TimeSpan.FromSeconds(5));
+            transform.BeginAnimation(TranslateTransform.YProperty, animY);
+        }
+
+        private void AnimationFromRightBack()
+        {
             var transform = new TranslateTransform();
             text.RenderTransform = transform;
 
-            DoubleAnimation animX = new DoubleAnimation(Width + 100, -400, TimeSpan.FromSeconds(1));
+            DoubleAnimation animX = new DoubleAnimation(tr.X, Width, TimeSpan.FromSeconds(3));
             transform.BeginAnimation(TranslateTransform.XProperty, animX);
 
-            DoubleAnimation animY = new DoubleAnimation(Height / a, Height / a, TimeSpan.FromSeconds(1));
+            DoubleAnimation animY = new DoubleAnimation(y, y, TimeSpan.FromSeconds(3));
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
 
         private void AnimationFromBot()
         {
-            var a = random.Next(1, 5);
-            text.Visibility = Visibility.Visible;
+            var transform = new TranslateTransform();
+            text.RenderTransform = transform;
+            tr = transform;
+
+            x = X;
+
+            DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+
+            DoubleAnimation animY = new DoubleAnimation(Height, -100, TimeSpan.FromSeconds(1));
+            transform.BeginAnimation(TranslateTransform.YProperty, animY);
+        }
+
+        private void AnimationFromBotBack()
+        {
             var transform = new TranslateTransform();
             text.RenderTransform = transform;
 
-            DoubleAnimation animX = new DoubleAnimation(Width / a, Width / a, TimeSpan.FromSeconds(1));
+            DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
             transform.BeginAnimation(TranslateTransform.XProperty, animX);
 
-            DoubleAnimation animY = new DoubleAnimation(Height + 100, -100, TimeSpan.FromSeconds(1));
+            DoubleAnimation animY = new DoubleAnimation(tr.Y, Height, TimeSpan.FromSeconds(1));
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
 
         private void AnimationFromTop()
         {
-            var a = random.Next(1, 5);
-            text.Visibility = Visibility.Visible;
+            var transform = new TranslateTransform();
+            text.RenderTransform = transform;
+            tr = transform;
+
+            x = X;
+
+            DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+
+            DoubleAnimation animY = new DoubleAnimation(-100, Height, TimeSpan.FromSeconds(1));
+            transform.BeginAnimation(TranslateTransform.YProperty, animY);
+        }                  
+
+        private void AnimationFromTopBack()
+        {
             var transform = new TranslateTransform();
             text.RenderTransform = transform;
 
-            DoubleAnimation animX = new DoubleAnimation(Width / a, Width / a, TimeSpan.FromSeconds(1));
+            DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
             transform.BeginAnimation(TranslateTransform.XProperty, animX);
 
-            DoubleAnimation animY = new DoubleAnimation(-100, Height + 100, TimeSpan.FromSeconds(1));
+            DoubleAnimation animY = new DoubleAnimation(tr.Y, -100, TimeSpan.FromSeconds(1));
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
     }
