@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,6 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace _2
 {
@@ -23,7 +25,7 @@ namespace _2
     {
         private Random random = new Random();
 
-        private int Y => random.Next(30, (int)Height - 25);
+        private int Y => random.Next(30, (int)Height - 100);
 
         private int X => random.Next(0, (int)Width - 100);
 
@@ -31,7 +33,7 @@ namespace _2
 
         private int y;
 
-        private  int Side;
+        private int Side;
 
         private TranslateTransform tr;
 
@@ -39,17 +41,18 @@ namespace _2
 
         DoubleAnimation animY = new DoubleAnimation();
 
+        private int count = 0;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            animX.Completed += AnimX_Completed;
-            animY.Completed += AnimX_Completed;
+            animX.Completed += Anim_Completed;
+            animY.Completed += Anim_Completed;
         }
 
-        private void AnimX_Completed(object sender, EventArgs e)
+        private void Anim_Completed(object sender, EventArgs e)
         {
-            MessageBox.Show("dff");
             btn1.IsEnabled = true;
             btn2.IsEnabled = false;
         }
@@ -58,24 +61,23 @@ namespace _2
         {
             Side = random.Next(1, 5);
             text.Visibility = Visibility.Visible;
-            AnimationFromLeft();
 
-            //if (Side == 1)
-            //{
-            //    AnimationFromLeft();
-            //}
-            //else if (Side == 2)
-            //{
-            //    AnimationFromRight();
-            //}
-            //else if (Side == 3)
-            //{
-            //    AnimationFromTop();
-            //}
-            //else if (Side == 4)
-            //{
-            //    AnimationFromBot();
-            //}
+            if (Side == 1)
+            {
+                AnimationFromLeft();
+            }
+            else if (Side == 2)
+            {
+                AnimationFromRight();
+            }
+            else if (Side == 3)
+            {
+                AnimationFromTop();
+            }
+            else if (Side == 4)
+            {
+                AnimationFromBot();
+            }
 
             btn1.IsEnabled = false;
             btn2.IsEnabled = true;
@@ -83,38 +85,41 @@ namespace _2
 
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
-            AnimationFromLeftBack();
-
-            //if (Side == 1)
-            //{
-            //    AnimationFromLeftBack();
-            //}
-            //else if (Side == 2)
-            //{
-            //    AnimationFromRightBack();
-            //}
-            //else if (Side == 3)
-            //{
-            //    AnimationFromTopBack();
-            //}
-            //else if (Side == 4)
-            //{
-            //    AnimationFromBotBack();
-            //}
-        }      
+            if (Side == 1)
+            {
+                AnimationFromLeftBack();
+            }
+            else if (Side == 2)
+            {
+                AnimationFromRightBack();
+            }
+            else if (Side == 3)
+            {
+                AnimationFromTopBack();
+            }
+            else if (Side == 4)
+            {
+                AnimationFromBotBack();
+            }
+        }
 
         private void AnimationFromLeft()
-        {          
+        {
             var transform = new TranslateTransform();
             text.RenderTransform = transform;
             tr = transform;
 
             y = Y;
 
-            /*DoubleAnimation*/ animX = new DoubleAnimation(-100, Width, TimeSpan.FromSeconds(5));
-            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+            animX.From = -100;
+            animX.To = Width;
+            animX.Duration = TimeSpan.FromSeconds(2);
 
-            /*DoubleAnimation*/ animY = new DoubleAnimation(y, y, TimeSpan.FromSeconds(5));
+            animY.From = y;
+            animY.To = y;
+            animY.Duration = TimeSpan.FromSeconds(2);
+
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
 
@@ -123,8 +128,13 @@ namespace _2
             var transform = new TranslateTransform();
             text.RenderTransform = transform;
 
-            DoubleAnimation animX = new DoubleAnimation(tr.X, -100, TimeSpan.FromSeconds(3));
-            DoubleAnimation animY = new DoubleAnimation(y, y, TimeSpan.FromSeconds(3));
+            animX.From = tr.X;
+            animX.To = -100;
+            animX.Duration = TimeSpan.FromSeconds(0.5);
+
+            animY.From = y;
+            animY.To = y;
+            animY.Duration = TimeSpan.FromSeconds(0.5);
             transform.BeginAnimation(TranslateTransform.XProperty, animX);
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
@@ -137,10 +147,15 @@ namespace _2
 
             y = Y;
 
-            DoubleAnimation animX = new DoubleAnimation(Width, -100, TimeSpan.FromSeconds(5));
-            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+            animX.From = Width;
+            animX.To = -100;
+            animX.Duration = TimeSpan.FromSeconds(2);
 
-            DoubleAnimation animY = new DoubleAnimation(y, y, TimeSpan.FromSeconds(5));
+            animY.From = y;
+            animY.To = y;
+            animY.Duration = TimeSpan.FromSeconds(2);
+
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
 
@@ -149,10 +164,17 @@ namespace _2
             var transform = new TranslateTransform();
             text.RenderTransform = transform;
 
-            DoubleAnimation animX = new DoubleAnimation(tr.X, Width, TimeSpan.FromSeconds(3));
-            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+            //DoubleAnimation animX = new DoubleAnimation(tr.X, Width, TimeSpan.FromSeconds(3));
+            //DoubleAnimation animY = new DoubleAnimation(y, y, TimeSpan.FromSeconds(3));
+            animX.From = tr.X;
+            animX.To = Width;
+            animX.Duration = TimeSpan.FromSeconds(0.5);
 
-            DoubleAnimation animY = new DoubleAnimation(y, y, TimeSpan.FromSeconds(3));
+            animY.From = y;
+            animY.To = y;
+            animY.Duration = TimeSpan.FromSeconds(0.5);
+
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
 
@@ -164,10 +186,18 @@ namespace _2
 
             x = X;
 
-            DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
-            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+            //DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
+            //DoubleAnimation animY = new DoubleAnimation(Height, -100, TimeSpan.FromSeconds(1));
 
-            DoubleAnimation animY = new DoubleAnimation(Height, -100, TimeSpan.FromSeconds(1));
+            animX.From = x;
+            animX.To = x;
+            animX.Duration = TimeSpan.FromSeconds(2);
+
+            animY.From = Height;
+            animY.To = -100;
+            animY.Duration = TimeSpan.FromSeconds(2);
+
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
 
@@ -176,10 +206,18 @@ namespace _2
             var transform = new TranslateTransform();
             text.RenderTransform = transform;
 
-            DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
-            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+            //DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
+            //DoubleAnimation animY = new DoubleAnimation(tr.Y, Height, TimeSpan.FromSeconds(1));
 
-            DoubleAnimation animY = new DoubleAnimation(tr.Y, Height, TimeSpan.FromSeconds(1));
+            animX.From = x;
+            animX.To = x;
+            animX.Duration = TimeSpan.FromSeconds(0.5);
+
+            animY.From = tr.Y;
+            animY.To = Height;
+            animY.Duration = TimeSpan.FromSeconds(0.5);
+
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
 
@@ -191,22 +229,38 @@ namespace _2
 
             x = X;
 
-            DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
-            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+            //DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
+            //DoubleAnimation animY = new DoubleAnimation(-100, Height, TimeSpan.FromSeconds(1));
 
-            DoubleAnimation animY = new DoubleAnimation(-100, Height, TimeSpan.FromSeconds(1));
+            animX.From = x;
+            animX.To = x;
+            animX.Duration = TimeSpan.FromSeconds(2);
+
+            animY.From = -100;
+            animY.To = Height;
+            animY.Duration = TimeSpan.FromSeconds(2);
+
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
-        }                  
+        }
 
         private void AnimationFromTopBack()
         {
             var transform = new TranslateTransform();
             text.RenderTransform = transform;
 
-            DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
-            transform.BeginAnimation(TranslateTransform.XProperty, animX);
+            //DoubleAnimation animX = new DoubleAnimation(x, x, TimeSpan.FromSeconds(1));
+            //DoubleAnimation animY = new DoubleAnimation(tr.Y, -100, TimeSpan.FromSeconds(1));
 
-            DoubleAnimation animY = new DoubleAnimation(tr.Y, -100, TimeSpan.FromSeconds(1));
+            animX.From = x;
+            animX.To = x;
+            animX.Duration = TimeSpan.FromSeconds(0.5);
+
+            animY.From = tr.Y;
+            animY.To = -100;
+            animY.Duration = TimeSpan.FromSeconds(0.5);
+
+            transform.BeginAnimation(TranslateTransform.XProperty, animX);
             transform.BeginAnimation(TranslateTransform.YProperty, animY);
         }
     }
