@@ -44,8 +44,6 @@ namespace lab3
         public MainWindow()
         {
             InitializeComponent();
-            //thirdCupAnimation.Completed += Anim_Completed;
-
 
             thicknessForFirstCup = new Thickness(200, 0, 0, 0);
             thicknessForSecondCup = new Thickness(350, 0, 0, 0);
@@ -145,11 +143,11 @@ namespace lab3
 
             count++;
 
-            if (level == 1)
+            if (level == 5)
             {
                 FirstLevel();
             }
-            else if (level == 2)
+            else if (level == 4)
             {
                 SecondLevel();
             }
@@ -157,11 +155,11 @@ namespace lab3
             {
                 ThirdLevel();
             }
-            else if (level == 4)
+            else if (level == 2)
             {
                 FourthLevel();
             }
-            else if (level == 5)
+            else if (level == 1)
             {
                 FivethLevel();
             }
@@ -212,17 +210,15 @@ namespace lab3
             firstCupAnimation = new ThicknessAnimation();
             secondCupAnimation = new ThicknessAnimation();
             thirdCupAnimation = new ThicknessAnimation();
-            ballAnimation = new ThicknessAnimation();           
+            ballAnimation = new ThicknessAnimation();
+
+            var storyBoard = new Storyboard();
+            storyBoard.Completed += TwoAnim;
 
             storyBoard.Children = new TimelineCollection {
                 firstCupAnimation, secondCupAnimation, thirdCupAnimation, ballAnimation
             };
-
-            secondCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            firstCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            thirdCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            ballAnimation.BeginTime = TimeSpan.FromSeconds(1);
-
+            
             MovingCup(Cup1, thirdCupAnimation, thicknessForThirdCup, speedRatio);
             MovingCup(Cup2, firstCupAnimation, thicknessForFirstCup, speedRatio);
             MovingCup(Cup3, secondCupAnimation, thicknessForSecondCup, speedRatio);
@@ -251,14 +247,12 @@ namespace lab3
             thirdCupAnimation = new ThicknessAnimation();
             ballAnimation = new ThicknessAnimation();
 
+            var storyBoard = new Storyboard();
+            storyBoard.Completed += ThirdAnim;
+
             storyBoard.Children = new TimelineCollection {
                 firstCupAnimation, secondCupAnimation, thirdCupAnimation, ballAnimation
             };
-
-            secondCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            firstCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            thirdCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            ballAnimation.BeginTime = TimeSpan.FromSeconds(1);
 
             MovingCup(Cup1, secondCupAnimation, thicknessForSecondCup, speedRatio);
             MovingCup(Cup2, firstCupAnimation, thicknessForFirstCup, speedRatio);            
@@ -278,14 +272,13 @@ namespace lab3
             thirdCupAnimation = new ThicknessAnimation();
             ballAnimation = new ThicknessAnimation();
 
+            var storyBoard = new Storyboard();
+            storyBoard.Completed += FourthAnim;
+
             storyBoard.Children = new TimelineCollection {
                 firstCupAnimation, secondCupAnimation, thirdCupAnimation, ballAnimation
             };
 
-            secondCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            firstCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            thirdCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            ballAnimation.BeginTime = TimeSpan.FromSeconds(1);
 
             MovingCup(Cup1, secondCupAnimation, thicknessForSecondCup, speedRatio);
             MovingCup(Cup2, thirdCupAnimation, thicknessForThirdCup, speedRatio);          
@@ -310,11 +303,6 @@ namespace lab3
                 firstCupAnimation, secondCupAnimation, thirdCupAnimation, ballAnimation
             };
 
-            secondCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            firstCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            thirdCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            ballAnimation.BeginTime = TimeSpan.FromSeconds(1);
-
             MovingCup(Cup2, thirdCupAnimation, thicknessForThirdCup, speedRatio);
             MovingCup(Cup1, secondCupAnimation, thicknessForSecondCup, speedRatio);
             MovingCup(Cup3, firstCupAnimation, thicknessForFirstCup, speedRatio);
@@ -338,11 +326,6 @@ namespace lab3
                 firstCupAnimation, secondCupAnimation, thirdCupAnimation, ballAnimation
             };
 
-            secondCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            firstCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            thirdCupAnimation.BeginTime = TimeSpan.FromSeconds(1);
-            ballAnimation.BeginTime = TimeSpan.FromSeconds(1);
-
             MovingCup(Cup1, firstCupAnimation, thicknessForFirstCup, speedRatio);
             MovingCup(Cup2, thirdCupAnimation, thicknessForThirdCup, speedRatio);          
             MovingCup(Cup3, secondCupAnimation, thicknessForSecondCup, speedRatio);
@@ -352,6 +335,22 @@ namespace lab3
             SetThickness(ref thicknessForSecondCup, ref thicknessForThirdCup);
 
             storyBoard.Begin();
+        }
+
+        private void TwoAnim(object sender, EventArgs e)
+        {
+            SecondLevel();
+
+        }
+
+        private void ThirdAnim(object sender, EventArgs e)
+        {
+            ThirdLevel();
+        }
+
+        private void FourthAnim(object sender, EventArgs e)
+        {
+            FourthLevel();
         }
     }
 }
