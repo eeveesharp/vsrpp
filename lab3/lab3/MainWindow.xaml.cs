@@ -172,7 +172,9 @@ namespace lab3
             thicknessAnimation.To = thickness;
             thicknessAnimation.Duration = TimeSpan.FromSeconds(1);
             thicknessAnimation.RepeatBehavior = new RepeatBehavior(1);
-            thicknessAnimation.AutoReverse = true;           
+            thicknessAnimation.AutoReverse = true;
+            
+            thicknessAnimation.BeginTime = TimeSpan.FromSeconds(1);
 
             Storyboard.SetTarget(thicknessAnimation, image);
             Storyboard.SetTargetProperty(thicknessAnimation, new PropertyPath(MarginProperty));
@@ -340,7 +342,6 @@ namespace lab3
         private void TwoAnim(object sender, EventArgs e)
         {
             SecondLevel();
-
         }
 
         private void ThirdAnim(object sender, EventArgs e)
